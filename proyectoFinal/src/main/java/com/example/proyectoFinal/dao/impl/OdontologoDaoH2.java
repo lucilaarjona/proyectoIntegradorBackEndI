@@ -30,7 +30,7 @@ public class OdontologoDaoH2 implements IDao<Odontologo> {
     }
 
     @Override
-    public Odontologo consultarPorId(Long id) throws SQLException, Exception {
+    public Odontologo buscar(Long id) throws SQLException, Exception {
         logger.debug("Iniciando método 'consultarPorId()'");
 
         if (id == null) throw new Exception("El id no puede ser null");
@@ -59,7 +59,7 @@ public class OdontologoDaoH2 implements IDao<Odontologo> {
     }
 
     @Override
-    public List<Odontologo> consultarTodos() throws SQLException {
+    public List<Odontologo> buscarTodos() throws SQLException {
         logger.debug("Iniciando método 'consultarTodos()'");
 
         Connection connection = configuracionJDBC.obtenerConexionConBD();
@@ -86,7 +86,7 @@ public class OdontologoDaoH2 implements IDao<Odontologo> {
     }
 
     @Override
-    public Odontologo insertarNuevo(Odontologo odontologo) throws Exception {
+    public Odontologo guardar(Odontologo odontologo) throws Exception {
         logger.debug("Iniciando método 'insertarNuevo()'");
 
         if (odontologo == null) throw new Exception("El odontologo no puede ser null");
@@ -114,6 +114,11 @@ public class OdontologoDaoH2 implements IDao<Odontologo> {
     }
 
     @Override
+    public void eliminar(Long id) {
+
+    }
+
+/*    @Override
     public Boolean actualizar(Odontologo odontologo) throws Exception {
         logger.debug("Iniciando método 'actualizar()'");
 
@@ -134,9 +139,9 @@ public class OdontologoDaoH2 implements IDao<Odontologo> {
 
         logger.debug("Terminó la ejecución del método 'actualizar()' con éxito");
         return seActualizo;
-    }
+    }*/
 
-    @Override
+/*    @Override
     public void borrarTodos() throws SQLException {
         logger.debug("Iniciando método 'borrarTodos()'");
         Connection connection = configuracionJDBC.obtenerConexionConBD();
@@ -147,5 +152,5 @@ public class OdontologoDaoH2 implements IDao<Odontologo> {
         preparedStatement.close();
         connection.close();
         logger.debug("Terminó la ejecución del método 'borrarTodos()' con éxito");
-    }
+    }*/
 }
