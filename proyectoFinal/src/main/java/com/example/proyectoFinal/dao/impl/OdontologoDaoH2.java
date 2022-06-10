@@ -4,153 +4,109 @@ import com.example.proyectoFinal.dao.IDao;
 import com.example.proyectoFinal.dao.config.ConfiguracionJDBC;
 import com.example.proyectoFinal.models.Odontologo;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
 
 public class OdontologoDaoH2 implements IDao<Odontologo> {
-
-    private ConfiguracionJDBC configuracionJDBC;
-    private Logger logger = Logger.getLogger(String.valueOf(OdontologoDaoH2.class));
-    private List<String> campos = List.of("nombre", "apellido", "numeroMatricula");
-
-    public OdontologoDaoH2() {
-        configuracionJDBC = new ConfiguracionJDBC();
-    }
-
-    public OdontologoDaoH2(ConfiguracionJDBC configuracionJDBC) throws Exception {
-        if (configuracionJDBC == null) {
-            throw new Exception("¡Sin configuración de JDBC no hay DAO!");
-        }
-        this.configuracionJDBC = configuracionJDBC;
-    }
+   private ConfiguracionJDBC configuracionJDBC;
 
     @Override
-    public Odontologo buscar(Long id) throws SQLException, Exception {
-        logger.debug("Iniciando método 'consultarPorId()'");
 
-        if (id == null) throw new Exception("El id no puede ser null");
+    public Odontologo guardar(Odontologo odontologo){
+        Connection connection= configuracionJDBC.conectarConBaseDeDatos();
+        PreparedStatement preparedStatement=null;
 
-        Connection connection = configuracionJDBC.obtenerConexionConBD();
-        PreparedStatement preparedStatement = connection.prepareStatement(GeneradorDeSentencias.generarSelectPorId("odontologos"));
-        preparedStatement.setLong(1, id);
-        ResultSet resultSet = preparedStatement.executeQuery();
-        Odontologo odontologo = new Odontologo();
+        try{
 
-        if (resultSet.next()) {
-            odontologo.setId(resultSet.getLong("id"));
-            odontologo.setNombre(resultSet.getString("nombre"));
-            odontologo.setApellido(resultSet.getString("apellido"));
-            odontologo.setMatricula(resultSet.getString("numeroMatricula"));
-        } else {
-            throw new Exception("No existe ningun odontologo con ese ID");
+            preparedStatement=connection.prepareStatement("INSERT INTO odontologos VALUES (?,?,?,?)");
+            preparedStatement.setLong(1,odontologo.getId());
+            preparedStatement.setString(2,odontologo.getMatricula());
+            preparedStatement.setString(3,odontologo.getNombre());
+            preparedStatement.setString(4,odontologo.getApellido());
+
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+
+        }catch(SQLException e){
+            throw new RuntimeException(e);
         }
 
-        resultSet.close();
-        preparedStatement.close();
-        connection.close();
-
-        logger.debug("Terminó la ejecución del método 'consultarPorId()' con éxito");
         return odontologo;
     }
 
     @Override
-    public List<Odontologo> buscarTodos() throws SQLException {
-        logger.debug("Iniciando método 'consultarTodos()'");
+    public Odontologo buscar(Long id){
+        Connection connection= configuracionJDBC.conectarConBaseDeDatos();
+        PreparedStatement preparedStatement=null;
+        Odontologo odontologo=null;
 
-        Connection connection = configuracionJDBC.obtenerConexionConBD();
-        PreparedStatement preparedStatement = connection.prepareStatement(GeneradorDeSentencias.generarSelectAll("odontologos"));
-        ResultSet resultSet = preparedStatement.executeQuery();
-        List<Odontologo> odontologos = new ArrayList<>();
+        try{
 
-        while (resultSet.next()) {
-            Odontologo paciente = new Odontologo(
-                    resultSet.getLong("id"),
-                    resultSet.getString("nombre"),
-                    resultSet.getString("apellido"),
-                    resultSet.getString("numeroMatricula")
-            );
-            odontologos.add(paciente);
+            preparedStatement=connection.prepareStatement("SELECT * FROM odontologos where id=?");
+            preparedStatement.setLong(1,id);
+
+            ResultSet result=preparedStatement.executeQuery();
+            while(result.next()){
+                Long idOdontologos=result.getLong("id");
+                String numeroMatricula=result.getString("numeroMatricula");
+                String nombre=result.getString("nombre");
+                String apellido=result.getString("apellido");
+
+
+                odontologo=new Odontologo(idOdontologos, numeroMatricula, nombre,apellido);
+
+            }
+
+            preparedStatement.close();
+
+
+        }catch(SQLException e){
+            throw new RuntimeException(e);
         }
-
-        resultSet.close();
-        preparedStatement.close();
-        connection.close();
-
-        logger.debug("Terminó la ejecución del método 'consultarTodos()' con éxito");
-        return odontologos;
-    }
-
-    @Override
-    public Odontologo guardar(Odontologo odontologo) throws Exception {
-        logger.debug("Iniciando método 'insertarNuevo()'");
-
-        if (odontologo == null) throw new Exception("El odontologo no puede ser null");
-
-        Connection connection = configuracionJDBC.obtenerConexionConBD();
-        PreparedStatement preparedStatement = connection.prepareStatement(
-                GeneradorDeSentencias.generarInsert("odontologos", campos),
-                Statement.RETURN_GENERATED_KEYS);
-
-        preparedStatement.setString(1, odontologo.getNombre());
-        preparedStatement.setString(2, odontologo.getApellido());
-        preparedStatement.setString(3, odontologo.getMatricula());
-        preparedStatement.execute();
-
-        ResultSet generatedKeys = preparedStatement.getGeneratedKeys();
-        if (generatedKeys.next()) {
-            odontologo.setId(generatedKeys.getString("id"));
-        }
-
-        preparedStatement.close();
-        connection.close();
-
-        logger.debug("Terminó la ejecución del método 'insertarNuevo()' con éxito");
         return odontologo;
     }
-
     @Override
     public void eliminar(Long id) {
-
+        Connection connection = configuracionJDBC.conectarConBaseDeDatos();
+        Statement stmt = null;
+        String query = String.format("DELETE FROM odontologos where id = %s", id);
+        try {
+            stmt = connection.createStatement();
+            stmt.executeUpdate(query);
+            stmt.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
+    @Override
+    public List<Odontologo> buscarTodos() {
+        Connection connection = configuracionJDBC.conectarConBaseDeDatos();
+        PreparedStatement preparedStatement = null;
+        List<Odontologo> odontologos = new ArrayList<>();
 
-/*    @Override
-    public Boolean actualizar(Odontologo odontologo) throws Exception {
-        logger.debug("Iniciando método 'actualizar()'");
+        try {
 
-        if (odontologo == null) throw new Exception("El odontologo no puede ser null");
-        if (odontologo.getId() == null) throw new Exception("El odontologo debe tener un id");
 
-        Connection connection = configuracionJDBC.obtenerConexionConBD();
-        PreparedStatement preparedStatement = connection.prepareStatement(GeneradorDeSentencias.generarUpdate("odontologos", campos));
+            preparedStatement = connection.prepareStatement("SELECT * FROM odontologos");
 
-        preparedStatement.setString(1, odontologo.getNombre());
-        preparedStatement.setString(2, odontologo.getApellido());
-        preparedStatement.setString(3, odontologo.getMatricula());
-        preparedStatement.setString(4, odontologo.getId());
+            ResultSet result = preparedStatement.executeQuery();
 
-        Boolean seActualizo = preparedStatement.executeUpdate() > 0;
-        preparedStatement.close();
-        connection.close();
+            while (result.next()) {
+                Long idOdontologos = result.getLong("id");
+                String numeroMatricula = result.getString("numeroMatricula");
+                String nombre = result.getString("nombre");
+                String apellido = result.getString("apellido");
+                Odontologo odontologo = new Odontologo(idOdontologos, numeroMatricula, nombre, apellido);
+                odontologos.add(odontologo);
+            }
 
-        logger.debug("Terminó la ejecución del método 'actualizar()' con éxito");
-        return seActualizo;
-    }*/
+            preparedStatement.close();
 
-/*    @Override
-    public void borrarTodos() throws SQLException {
-        logger.debug("Iniciando método 'borrarTodos()'");
-        Connection connection = configuracionJDBC.obtenerConexionConBD();
-        PreparedStatement preparedStatement = connection.prepareStatement(GeneradorDeSentencias.generarDeleteAll("odontologos"));
 
-        preparedStatement.execute();
-
-        preparedStatement.close();
-        connection.close();
-        logger.debug("Terminó la ejecución del método 'borrarTodos()' con éxito");
-    }*/
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return odontologos;
+    }
 }

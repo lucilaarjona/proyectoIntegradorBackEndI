@@ -13,6 +13,16 @@ public class Odontologo {
         this.matricula = matricula;
     }
 
+    public Odontologo() {
+
+    }
+
+    public Odontologo(String nombre, String apellido, String matricula) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.matricula = matricula;
+    }
+
     public Long getId() {
         return id;
     }
