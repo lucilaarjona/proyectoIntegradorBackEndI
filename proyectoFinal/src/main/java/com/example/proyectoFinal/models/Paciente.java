@@ -11,6 +11,8 @@ public class Paciente {
     private String fechaIngreso;
     private Domicilio domicilio;
 
+    //private Turno turno
+
     public Paciente(Long id, String nombre, String apellido, String dni, String fechaIngreso, Domicilio domicilio) {
         this.id = id;
         this.nombre = nombre;
