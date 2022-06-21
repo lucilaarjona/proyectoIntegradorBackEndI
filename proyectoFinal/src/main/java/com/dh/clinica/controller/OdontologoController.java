@@ -1,7 +1,7 @@
 package com.dh.clinica.controller;
 
 import com.dh.clinica.repository.impl.OdontologoDaoH2;
-import com.dh.clinica.model.Odontologo;
+import com.dh.clinica.persistence.entities.Odontologo;
 
 import com.dh.clinica.service.OdontologoService;
 import org.springframework.beans.factory.annotation.Autowired;

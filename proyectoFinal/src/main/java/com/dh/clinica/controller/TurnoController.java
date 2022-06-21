@@ -4,7 +4,7 @@ import com.dh.clinica.repository.impl.DomicilioDaoH2;
 import com.dh.clinica.repository.impl.OdontologoDaoH2;
 import com.dh.clinica.repository.impl.PacienteDaoH2;
 import com.dh.clinica.repository.impl.TurnoListRepository;
-import com.dh.clinica.model.Turno;
+import com.dh.clinica.persistence.entities.Turno;
 import com.dh.clinica.service.OdontologoService;
 import com.dh.clinica.service.PacienteService;
 import com.dh.clinica.service.TurnoService;

@@ -1,6 +1,4 @@
-package com.dh.clinica.model;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
+package com.dh.clinica.persistence.entities;
 
 import java.util.Date;
 

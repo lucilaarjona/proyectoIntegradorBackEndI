@@ -1,40 +1,27 @@
 package com.dh.clinica.service;
 
 
-import com.dh.clinica.repository.IDao;
-import com.dh.clinica.model.Paciente;
+import com.dh.clinica.persistence.entities.Paciente;
+import com.dh.clinica.persistence.repository.PacienteRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
+
 @Service
 public class PacienteService {
 
-    private IDao<Paciente> pacienteIDao;
-
-    public PacienteService(IDao<Paciente> pacienteIDao) {
-        this.pacienteIDao = pacienteIDao;
+    @Autowired
+    PacienteRepository repository;
+    public String save (Paciente p){
+        if (repository.save(p)!= null){
+            return "OK";
+        }else {
+            return null;
+        }
     }
-
-    public Paciente guardar(Paciente p) {
-        p.setFechaIngreso(new Date());
-        return pacienteIDao.guardar(p);
-    }
-
-    public Paciente buscar(Integer id) {
-        return pacienteIDao.buscar(id);
-    }
-
-    public List<Paciente> buscarTodos() {
-        return pacienteIDao.buscarTodos();
-    }
-
-    public void eliminar(Integer id) {
-        pacienteIDao.eliminar(id);
-    }
-
-    public Paciente actualizar(Paciente p) {
-        return pacienteIDao.actualizar(p);
+    public List<Paciente> obtenerTodos() {
+        return repository.findAll();
     }
 }

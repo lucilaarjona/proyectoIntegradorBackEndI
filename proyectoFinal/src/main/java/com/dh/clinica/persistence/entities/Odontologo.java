@@ -1,4 +1,4 @@
-package com.dh.clinica.model;
+package com.dh.clinica.persistence.entities;
 
 public class Odontologo {
 
