@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Clinica Odontologica</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/js/delete_odontologo.js"></script>
+</head>
+<body>
+<div class="container">
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link" href="/odontologoAlta.html">Agregar nuevo</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/odontologoList.html/">Todos</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/odontologoModificar.html/">Modificar</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/odontologoEliminar.html/">Eliminar</a>
+    </li>
+  </ul>
+  <div class="row">
+    <div class="col-sm-7" style="background-color:#e6fffa; padding:10px; border-radius:3px">
+      <h3>Eliminar Odontologo</h3>
+      <form id="delete_odontologo">
+        <div class="form-group">
+          <label class="control-label" for="id-eliminar">Id:</label>
+          <input type="text" class="form-control" id="id-eliminar"
+                 placeholder="Ingrese el id"
+                 name="id-eliminar" required></input>
+        </div>
+        <button type="submit" class="btn btn-danger"
+                id="btn-add-new-odontologo">Eliminar</button>
+      </form>
+      <div id="response" style="display:none; margin-top:10px">
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
