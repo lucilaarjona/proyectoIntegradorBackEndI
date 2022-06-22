@@ -20,7 +20,7 @@ public class DomicilioService {
             return null;
         }
     }
-    public List<Domicilio> obtenerTodos (){
+    public List<Domicilio> obtenerTodos(){
         return repository.findAll();
     }
 }
