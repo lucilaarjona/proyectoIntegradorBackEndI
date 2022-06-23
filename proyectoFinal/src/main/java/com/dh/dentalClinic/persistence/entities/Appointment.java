@@ -14,16 +14,16 @@ public class Appointment {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
     @Column
-    private Patient patient;
+    private String patient;
     @Column
-    private Dentist dentist;
+    private String dentist;
     @Column
     private Date date;
 
     public Appointment() {
     }
 
-    public Appointment(Patient patient, Dentist dentist, Date date) {
+    public Appointment(String patient, String dentist, Date date) {
         this.patient = patient;
         this.dentist = dentist;
         this.date = date;
