@@ -4,13 +4,16 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Setter
 @Getter
 @Entity
 public class Domicilio {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "domicilio_sequence", sequenceName = "domicilio_sequence", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "domicilio_sequence")
     private Integer id;
     @Column
     private String calle;
@@ -20,7 +23,8 @@ public class Domicilio {
     private String localidad;
     @Column
     private String provincia;
-
+    @OneToMany(mappedBy = "domicilio", fetch = FetchType.LAZY)
+    private Set<Paciente> pacientes = new HashSet<>();
     public Domicilio() {
     }
 
@@ -41,4 +45,5 @@ public class Domicilio {
                 ", provincia='" + provincia + '\'' +
                 '}';
     }
+
 }

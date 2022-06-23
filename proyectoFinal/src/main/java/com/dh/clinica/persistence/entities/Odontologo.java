@@ -5,13 +5,17 @@ import lombok.Setter;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
 @Entity
+@Table
 public class Odontologo {
     @Id
-    @GeneratedValue( strategy = GenerationType.SEQUENCE )
+    @SequenceGenerator(name = "odontologo_sequence", sequenceName = "odontologo_sequence", allocationSize = 1)
+    @GeneratedValue( strategy = GenerationType.SEQUENCE, generator = "odontologo_sequence")
     private Integer id;
     @Column
     private String nombre;
@@ -19,6 +23,8 @@ public class Odontologo {
     private String apellido;
     @Column
     private Integer matricula;
+    @OneToMany(mappedBy = "odontologo", fetch = FetchType.LAZY )
+    private Set<Paciente> pacientes = new HashSet<>();
 
     public Odontologo() {
     }
