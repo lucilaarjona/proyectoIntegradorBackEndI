@@ -13,8 +13,8 @@ public class DentistService {
     @Autowired
     DentistRepository repository;
 
-    public String save(Dentist o){
-        if (repository.save(o)!= null){
+    public String save(Dentist d){
+        if (repository.save(d)!= null){
             return "Ok";
         }else {
             return null;

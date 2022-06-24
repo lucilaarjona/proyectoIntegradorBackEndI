@@ -13,8 +13,8 @@ import java.util.List;
 public class AddressService {
     @Autowired
     AddressRepository repository;
-    public String save(Address d){
-        if (repository.save(d)!= null){
+    public String save(Address a){
+        if (repository.save(a)!= null){
             return "OK";
         }else{
             return null;

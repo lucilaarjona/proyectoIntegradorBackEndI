@@ -18,7 +18,7 @@ public class Dentist {
     @Id
     @SequenceGenerator(name = "dentist_sequence", sequenceName = "dentist_sequence", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "dentist_sequence")
-    private Integer id;
+    private Long id;
 
     @Column
     private String firstName;

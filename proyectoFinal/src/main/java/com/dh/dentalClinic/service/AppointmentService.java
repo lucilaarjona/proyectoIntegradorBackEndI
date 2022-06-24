@@ -11,8 +11,8 @@ import java.util.List;
 public class AppointmentService {
     @Autowired
     AppointmentsRepository repository;
-    public String save (Appointment t){
-        if (repository.save(t)!=null){
+    public String save (Appointment a){
+        if (repository.save(a)!=null){
             return "Ok";
         }else{
             return null;
