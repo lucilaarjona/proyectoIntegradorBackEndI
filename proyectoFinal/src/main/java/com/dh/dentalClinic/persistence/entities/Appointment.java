@@ -17,11 +17,13 @@ public class Appointment {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
 
-    @Column
-    private String patient;
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL )
+    @JoinColumn(name = "patient_id", nullable = false)
+    private Patient patient;
 
-    @Column
-    private String dentist;
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL )
+    @JoinColumn(name = "dentist_id", nullable = false)
+    private Dentist dentist;
 
     @Column
     private Date date;
@@ -29,7 +31,7 @@ public class Appointment {
     public Appointment() {
     }
 
-    public Appointment(String patient, String dentist, Date date) {
+    public Appointment(Patient patient, Dentist dentist, Date date) {
         this.patient = patient;
         this.dentist = dentist;
         this.date = date;
