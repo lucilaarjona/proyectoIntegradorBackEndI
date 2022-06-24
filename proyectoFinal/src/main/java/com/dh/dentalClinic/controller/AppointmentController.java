@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/appointment")
+@RequestMapping("/appointments")
 public class AppointmentController {
     @Autowired
     AppointmentService service;
 
-    @PostMapping("/create")
+    @PostMapping("")
     public ResponseEntity<String> create(@RequestBody Appointment app) {
         ResponseEntity<String> response = null;
 
@@ -26,7 +26,7 @@ public class AppointmentController {
         return response;
     }
 
-    @RequestMapping(value = "/all", method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "", method = RequestMethod.GET, produces = "application/json")
     public List<Appointment> getProduct() {
         return service.getAll();
     }

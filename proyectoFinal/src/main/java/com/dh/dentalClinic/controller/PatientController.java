@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/patient")
+@RequestMapping("/patients")
 public class PatientController {
     @Autowired
     PatientService service;
 
-    @PostMapping("/create")
-    public ResponseEntity<String> create(@RequestBody Patient p) {
+    @PostMapping("")
+    public ResponseEntity<String> createPatient(@RequestBody Patient p) {
         ResponseEntity<String> response = null;
 
         if(service.save(p) != null) {
@@ -27,8 +27,8 @@ public class PatientController {
         return response;
     }
 
-    @RequestMapping(value = "/all", method = RequestMethod.GET, produces = "application/json")
-    public List<Patient> getProduct() {
+    @RequestMapping(value = "", method = RequestMethod.GET, produces = "application/json")
+    public List<Patient> getPatient() {
         return service.getAll();
     }
 }

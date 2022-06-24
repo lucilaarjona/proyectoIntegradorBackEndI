@@ -8,13 +8,13 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/dentist")
+@RequestMapping("/dentists")
 public class DentistController {
     @Autowired
     DentistService service;
 
-    @PostMapping("/create")
-    public ResponseEntity<String> create(@RequestBody Dentist d) {
+    @PostMapping("")
+    public ResponseEntity<String> createDentist(@RequestBody Dentist d) {
         ResponseEntity<String> response = null;
 
         if(service.save(d) != null) {
@@ -25,8 +25,8 @@ public class DentistController {
         return response;
     }
 
-    @RequestMapping(value = "/all", method = RequestMethod.GET, produces = "application/json")
-    public List<Dentist> getProduct() {
+    @RequestMapping(value = "", method = RequestMethod.GET, produces = "application/json")
+    public List<Dentist> getDentist() {
         return service.getAll();
     }
 }
