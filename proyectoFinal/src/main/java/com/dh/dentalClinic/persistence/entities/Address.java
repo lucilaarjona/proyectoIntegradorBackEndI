@@ -1,7 +1,9 @@
 package com.dh.dentalClinic.persistence.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -9,7 +11,9 @@ import java.util.Set;
 
 @Setter
 @Getter
+@ToString
 @Entity
+@Table(name = "addresses")
 public class Address {
     @Id
     @SequenceGenerator(name = "address_sequence", sequenceName = "address_sequence", allocationSize = 1)
@@ -17,13 +21,18 @@ public class Address {
     private Integer id;
     @Column
     private String street;
+
     @Column
     private String number;
+
     @Column
     private String locality;
+
     @Column
     private String province;
+
     @OneToMany(mappedBy = "address", fetch = FetchType.LAZY)
+    @JsonIgnore
     private Set<Patient> patients = new HashSet<>();
     public Address() {
     }
@@ -33,17 +42,5 @@ public class Address {
         this.number = number;
         this.locality = locality;
         this.province = province;
-    }
-
-    @Override
-    public String toString() {
-        return "Address{" +
-                "id=" + id +
-                ", street='" + street + '\'' +
-                ", number='" + number + '\'' +
-                ", locality='" + locality + '\'' +
-                ", province='" + province + '\'' +
-                ", patients=" + patients +
-                '}';
     }
 }
