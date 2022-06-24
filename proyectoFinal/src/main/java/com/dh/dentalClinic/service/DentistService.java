@@ -24,4 +24,32 @@ public class DentistService {
         return repository.findAll();
     }
 
+    public String delete(Long id) {
+        if(repository.findById(id).isPresent()){
+            String productName = repository.getById(id).getLastName();
+            repository.deleteById(id);
+            return "Dentista id: " + id + ", Apellido: " + productName + " fué eliminado.";
+        }
+        return "Dentista id: " + id + " no fué encontrado.";
+    }
+    public String updateDentist(Dentist d){
+        Long dentistId = d.getId();
+
+        if(repository.findById(dentistId).isPresent()) {
+            Dentist dentistaAModificar = repository.getById(dentistId);
+
+            dentistaAModificar.setFirstName(d.getFirstName());
+            dentistaAModificar.setLastName(d.getLastName());
+            dentistaAModificar.setRegistration(d.getRegistration());
+
+            // no toy segura de este
+            // dentistaAModificar.setPatients(d.getPatients());
+
+            repository.save(dentistaAModificar);
+            return "Dentist with Id: " + dentistId + " was modified.";
+
+        } else {
+            return "Dentist with Id " + dentistId + " does not exist.";
+        }
+    }
 }

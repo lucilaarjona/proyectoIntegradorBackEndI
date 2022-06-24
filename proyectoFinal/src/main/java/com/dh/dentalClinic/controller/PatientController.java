@@ -31,4 +31,16 @@ public class PatientController {
     public List<Patient> getPatient() {
         return service.getAll();
     }
+
+    @DeleteMapping(value = "{id}")
+    public String delete(@PathVariable Long id) {
+        return service.delete(id);
+    }
+
+    @PutMapping(value = "")
+    public String updateProduct(Patient patient){
+        return service.updatePatient(patient);
+    }
+
+
 }

@@ -1,5 +1,6 @@
 package com.dh.dentalClinic.controller;
 import com.dh.dentalClinic.persistence.entities.Dentist;
+import com.dh.dentalClinic.persistence.entities.Patient;
 import com.dh.dentalClinic.service.DentistService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -29,4 +30,16 @@ public class DentistController {
     public List<Dentist> getDentist() {
         return service.getAll();
     }
+
+    @DeleteMapping(value = "{id}")
+    public String delete(@PathVariable Long id) {
+        return service.delete(id);
+    }
+    @PutMapping(value = "{id}")
+    public String updateDentist(Dentist dentist){
+        return service.updateDentist(dentist);
+    }
+
+
+
 }
