@@ -7,10 +7,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
-
 @RestController
 @RequestMapping("/dentists")
 public class DentistController {
+
     @Autowired
     DentistService service;
 
@@ -31,12 +31,19 @@ public class DentistController {
         return service.getAll();
     }
 
+    @GetMapping("/{id}")
+    public Dentist getPatientById(@PathVariable Long id) {
+        return service.getById(id);
+    }
+
+
     @DeleteMapping(value = "{id}")
     public String delete(@PathVariable Long id) {
         return service.delete(id);
     }
-    @PutMapping(value = "{id}")
-    public String updateDentist(Dentist dentist){
+
+    @PutMapping("")
+    public String updateDentist(@RequestBody Dentist dentist){
         return service.updateDentist(dentist);
     }
 

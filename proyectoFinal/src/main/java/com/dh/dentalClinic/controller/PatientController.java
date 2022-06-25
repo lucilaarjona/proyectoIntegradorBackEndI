@@ -1,5 +1,6 @@
 package com.dh.dentalClinic.controller;
 
+import com.dh.dentalClinic.persistence.entities.Dentist;
 import com.dh.dentalClinic.persistence.entities.Patient;
 import com.dh.dentalClinic.service.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/patients")
 public class PatientController {
+
     @Autowired
     PatientService service;
 
@@ -28,8 +30,13 @@ public class PatientController {
     }
 
     @RequestMapping(value = "", method = RequestMethod.GET, produces = "application/json")
-    public List<Patient> getPatient() {
+    public List<Patient> getAllPatients() {
         return service.getAll();
+    }
+
+    @GetMapping("/{id}")
+    public Patient getPatientById(@PathVariable Long id) {
+        return service.getById(id);
     }
 
     @DeleteMapping(value = "{id}")
@@ -38,7 +45,7 @@ public class PatientController {
     }
 
     @PutMapping(value = "")
-    public String updateProduct(Patient patient){
+    public String updateProduct(@RequestBody Patient patient){
         return service.updatePatient(patient);
     }
 
