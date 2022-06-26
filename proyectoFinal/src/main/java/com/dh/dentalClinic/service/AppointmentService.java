@@ -53,15 +53,15 @@ public class AppointmentService {
         return "Appointment with id "+ id + " was not found. ";
     }
 
-    public String updateAppointment(Appointment app){
-        Long appId = app.getId();
+    public String updateAppointment(Appointment a){
+        Long appId = a.getId();
 
         if(repository.findById(appId).isPresent()) {
             Appointment modifiedAppointment = repository.getById(appId);
 
-            modifiedAppointment.setPatient(app.getPatient());
-            modifiedAppointment.setDentist(app.getDentist());
-            modifiedAppointment.setDate(app.getDate());
+            modifiedAppointment.setPatient(a.getPatient());
+            modifiedAppointment.setDentist(a.getDentist());
+            modifiedAppointment.setDate(a.getDate());
 
             repository.save(modifiedAppointment);
             logger.info("Appointment " + appId +" was succesfully modified.");

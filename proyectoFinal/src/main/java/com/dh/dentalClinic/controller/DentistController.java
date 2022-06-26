@@ -14,7 +14,7 @@ public class DentistController {
     @Autowired
     DentistService service;
 
-    @PostMapping("")
+    @PostMapping
     public ResponseEntity<String> createDentist(@RequestBody Dentist d) {
         ResponseEntity<String> response = null;
 
@@ -42,7 +42,7 @@ public class DentistController {
         return service.delete(id);
     }
 
-    @PutMapping("")
+    @PutMapping
     public String updateDentist(@RequestBody Dentist dentist){
         return service.updateDentist(dentist);
     }

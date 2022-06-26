@@ -31,12 +31,12 @@ public class Patient {
     private Date admissionDate;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL )
-    @JoinColumn(name = "address_id", nullable = false)
+    @JoinColumn(name = "address_id")
     private Address address;
 
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "dentist_id", nullable = false)
+    @JoinColumn(name = "dentist_id")
     private Dentist dentist;
     public Patient() {
     }

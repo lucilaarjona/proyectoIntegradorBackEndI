@@ -17,7 +17,7 @@ public class PatientController {
     @Autowired
     PatientService service;
 
-    @PostMapping("")
+    @PostMapping
     public ResponseEntity<String> createPatient(@RequestBody Patient p) {
         ResponseEntity<String> response = null;
 
@@ -44,7 +44,7 @@ public class PatientController {
         return service.delete(id);
     }
 
-    @PutMapping(value = "")
+    @PutMapping
     public String updateProduct(@RequestBody Patient patient){
         return service.updatePatient(patient);
     }
