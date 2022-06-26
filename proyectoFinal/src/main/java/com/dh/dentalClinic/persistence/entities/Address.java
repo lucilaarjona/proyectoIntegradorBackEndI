@@ -1,6 +1,7 @@
 package com.dh.dentalClinic.persistence.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -12,6 +13,7 @@ import java.util.Set;
 @Setter
 @Getter
 @ToString
+@JsonIgnoreProperties({"hibernateLazyInitializer"})
 @Entity
 @Table(name = "addresses")
 public class Address {
