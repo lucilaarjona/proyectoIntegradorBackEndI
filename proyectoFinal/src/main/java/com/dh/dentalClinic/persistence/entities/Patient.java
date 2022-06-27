@@ -1,6 +1,7 @@
 package com.dh.dentalClinic.persistence.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -30,13 +31,13 @@ public class Patient {
     @Column
     private Date admissionDate;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL )
-    @JoinColumn(name = "address_id", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE )
+    @JoinColumn(name = "address_id")
     private Address address;
 
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "dentist_id", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+    @JoinColumn(name = "dentist_id")
     private Dentist dentist;
     public Patient() {
     }

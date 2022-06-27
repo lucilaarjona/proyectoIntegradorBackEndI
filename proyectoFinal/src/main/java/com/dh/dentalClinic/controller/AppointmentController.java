@@ -1,6 +1,7 @@
 package com.dh.dentalClinic.controller;
 
 import com.dh.dentalClinic.persistence.entities.Appointment;
+import com.dh.dentalClinic.persistence.entities.Dentist;
 import com.dh.dentalClinic.service.AppointmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +16,7 @@ public class AppointmentController {
     AppointmentService service;
 
     @PostMapping("")
-    public ResponseEntity<String> create(@RequestBody Appointment app) {
+    public ResponseEntity<String> createAppointment(@RequestBody Appointment app) {
         ResponseEntity<String> response = null;
 
         if(service.save(app) != null) {
@@ -27,7 +28,24 @@ public class AppointmentController {
     }
 
     @RequestMapping(value = "", method = RequestMethod.GET, produces = "application/json")
-    public List<Appointment> getProduct() {
+    public List<Appointment> getAllAppointments() {
         return service.getAll();
+    }
+
+
+    @GetMapping("/{id}")
+    public Appointment getAppointmentById(@PathVariable Long id) {
+        return service.getById(id);
+    }
+
+
+    @DeleteMapping(value = "{id}")
+    public String deleteAppointment(@PathVariable Long id) {
+        return service.delete(id);
+    }
+
+    @PutMapping("")
+    public String updateAppointment(@RequestBody Appointment appointment){
+        return service.updateAppointment(appointment);
     }
 }
