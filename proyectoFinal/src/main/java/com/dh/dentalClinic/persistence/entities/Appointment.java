@@ -1,5 +1,6 @@
 package com.dh.dentalClinic.persistence.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -9,6 +10,7 @@ import java.util.Date;
 @Setter
 @Getter
 @ToString
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
 @Table(name = "appointments")
 public class Appointment {
@@ -17,12 +19,12 @@ public class Appointment {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL )
-    @JoinColumn(name = "patient_id", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE )
+    @JoinColumn(name = "patient_id")
     private Patient patient;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL )
-    @JoinColumn(name = "dentist_id", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE )
+    @JoinColumn(name = "dentist_id")
     private Dentist dentist;
 
     @Column
