@@ -39,7 +39,4 @@ public class DentistController {
     public String updateDentist(Dentist dentist){
         return service.updateDentist(dentist);
     }
-
-
-
 }
