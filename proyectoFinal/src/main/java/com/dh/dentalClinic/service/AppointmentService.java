@@ -57,7 +57,7 @@ public class AppointmentService {
         Long appId = a.getId();
 
         if(repository.findById(appId).isPresent()) {
-            Appointment modifiedAppointment = repository.getById(appId);
+            Appointment modifiedAppointment = repository.findById(appId).get();
 
             modifiedAppointment.setPatient(a.getPatient());
             modifiedAppointment.setDentist(a.getDentist());

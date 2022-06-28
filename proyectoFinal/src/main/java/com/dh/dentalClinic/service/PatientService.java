@@ -46,11 +46,12 @@ public class PatientService {
 
     public String delete(Long id) {
         if(repository.findById(id).isPresent()){
-            String productName = repository.getById(id).getLastName();
+            //String productName = repository.findById(id).getLastName();
             repository.deleteById(id);
 
             logger.info("Patient was succesfully deleted");
-            return "Patient id: " + id + ", lastName: " + productName + " was deleted.";
+            //return "Patient id: " + id + ", lastName: " + productName + " was deleted.";
+            return "Patient id: " + id + " was deleted.";
         }
         logger.error("Patient was not found");
         return "Patient id: " + id + " was not found.";
@@ -62,13 +63,12 @@ public class PatientService {
 
         if(repository.findById(patientId).isPresent()) {
             /*logger.info(repository.getById(p.getAddress().getId()));*/
-            Patient pacienteAModificar = repository.getById(patientId);
+            Patient pacienteAModificar = repository.findById(patientId).get();
             pacienteAModificar.setFirstName(p.getFirstName());
             pacienteAModificar.setLastName(p.getLastName());
             pacienteAModificar.setDni(p.getDni());
             pacienteAModificar.setAdmissionDate(p.getAdmissionDate());
             pacienteAModificar.setAddress(p.getAddress());
-            pacienteAModificar.setDentist(p.getDentist());
 
             repository.save(pacienteAModificar);
 

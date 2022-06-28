@@ -45,10 +45,11 @@ public class DentistService {
 
     public String delete(Long id) {
         if(repository.findById(id).isPresent()){
-            String productName = repository.getById(id).getLastName();
+            //String productName = repository.getById(id).getLastName();
             repository.deleteById(id);
             logger.info("Dentist was succesfully deleted");
-            return "Dentist id: " + id + ", LastName: " + productName + " was succesfully deleted.";
+            //return "Dentist id: " + id + ", LastName: " + productName + " was succesfully deleted.";
+            return "Dentist id: " + id + " was succesfully deleted.";
         }
         logger.error("Dentist was not found");
         return "Dentist with id: " + id + " was not found.";
@@ -60,7 +61,7 @@ public class DentistService {
         Long dentistId = d.getId();
 
         if(repository.findById(dentistId).isPresent()) {
-            Dentist dentistaAModificar = repository.getById(dentistId);
+            Dentist dentistaAModificar = repository.findById(dentistId).get();
 
             dentistaAModificar.setFirstName(d.getFirstName());
             dentistaAModificar.setLastName(d.getLastName());
