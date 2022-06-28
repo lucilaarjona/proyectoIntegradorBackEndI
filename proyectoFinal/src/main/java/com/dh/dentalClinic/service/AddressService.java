@@ -2,6 +2,7 @@ package com.dh.dentalClinic.service;
 
 
 import com.dh.dentalClinic.persistence.entities.Address;
+import com.dh.dentalClinic.persistence.entities.Dentist;
 import com.dh.dentalClinic.persistence.repository.AddressRepository;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,16 @@ public class AddressService {
             logger.error("There was something wrong...");
             return null;
         }
+    }
+    public Address getById(Long id){
+
+        if(repository.existsById(id)){
+            Address address = repository.findById(id).get();
+            logger.info("Looking for address with id:" + id);
+            return address;
+        }
+        logger.info("Address was not found");
+        return null;
     }
     public List<Address> getAll(){
         logger.info("Searching all addresses...");

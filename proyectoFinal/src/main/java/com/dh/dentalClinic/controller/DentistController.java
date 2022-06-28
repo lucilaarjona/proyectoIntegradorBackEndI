@@ -46,4 +46,7 @@ public class DentistController {
     public String updateDentist(@RequestBody Dentist dentist){
         return service.updateDentist(dentist);
     }
+
+
+
 }
