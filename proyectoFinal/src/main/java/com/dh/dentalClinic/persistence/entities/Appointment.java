@@ -4,30 +4,27 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import javax.persistence.*;
 import java.util.Date;
 @Setter
 @Getter
 @ToString
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-@Entity
-@Table(name = "appointments")
+@Document(collection = "appointment")
+
 public class Appointment {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
+    @Field(name = "patient")
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE )
-    @JoinColumn(name = "patient_id")
     private Patient patient;
+    @Field(name = "dentist")
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE )
-    @JoinColumn(name = "dentist_id")
     private Dentist dentist;
 
-    @Column
     private Date date;
 
     public Appointment() {

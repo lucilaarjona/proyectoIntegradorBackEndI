@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -13,28 +15,21 @@ import java.util.Set;
 @Setter
 @Getter
 @ToString
-@JsonIgnoreProperties({"hibernateLazyInitializer"})
-@Entity
-@Table(name = "addresses")
+@Document(collection = "address")
+
 public class Address {
     @Id
-    @SequenceGenerator(name = "address_sequence", sequenceName = "address_sequence", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "address_sequence")
+
     private Long id;
-    @Column
     private String street;
 
-    @Column
     private String number;
 
-    @Column
     private String locality;
 
-    @Column
     private String province;
+    @Field(name = "patient")
 
-    @OneToMany(mappedBy = "address", fetch = FetchType.LAZY)
-    @JsonIgnore
     private Set<Patient> patients = new HashSet<>();
     public Address() {
     }

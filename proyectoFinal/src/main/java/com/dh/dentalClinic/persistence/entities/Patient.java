@@ -5,41 +5,30 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import javax.persistence.*;
 import java.util.Date;
 @Getter
 @Setter
 @ToString
-
-@Entity
-@Table(name = "patients")
+@Document(collection = "patients")
 public class Patient {
-    @Id
-    @SequenceGenerator(name = "patient_sequence", sequenceName = "patient_sequence", allocationSize = 1)
-    @GeneratedValue (strategy = GenerationType.SEQUENCE, generator = "patient_sequence")
+   @Id
     private Long id;
 
-    @Column
     private String firstName;
 
-    @Column
     private String lastName;
 
-    @Column
     private String dni;
 
-    @Column
     private Date admissionDate;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "address_id")
+    @Field(name = "address")
     private Address address;
 
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "dentist_id")
-    private Dentist dentist;
     public Patient() {
     }
 
