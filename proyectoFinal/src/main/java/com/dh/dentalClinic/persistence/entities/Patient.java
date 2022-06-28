@@ -32,13 +32,13 @@ public class Patient {
     @Column
     private Date admissionDate;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE )
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "address_id")
     private Address address;
 
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
-    @JoinColumn(name = "dentist_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "dentist_id", nullable = false)
     private Dentist dentist;
     public Patient() {
     }

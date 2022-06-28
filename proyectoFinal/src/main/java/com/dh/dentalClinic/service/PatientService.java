@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PatientService {
@@ -60,8 +61,8 @@ public class PatientService {
         Long patientId = p.getId();
 
         if(repository.findById(patientId).isPresent()) {
+            /*logger.info(repository.getById(p.getAddress().getId()));*/
             Patient pacienteAModificar = repository.getById(patientId);
-
             pacienteAModificar.setFirstName(p.getFirstName());
             pacienteAModificar.setLastName(p.getLastName());
             pacienteAModificar.setDni(p.getDni());
