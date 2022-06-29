@@ -17,6 +17,7 @@ class AppointmentServiceTest {
 
     @Test
     public void crearAppointment(){
+<<<<<<< HEAD
 
         Appointment appointment = new Appointment();
 
@@ -27,6 +28,12 @@ class AppointmentServiceTest {
         appointmentService.save(appointment);
         Appointment appointment1 = appointmentService.getById(1L);
 
+=======
+        Appointment appointment = new Appointment();
+        appointment.setDate(new Date(2022-12-02));
+        appointmentService.save(appointment);
+        Appointment appointment1 = appointmentService.getById(1L);
+>>>>>>> e965fd8b79ac1c9c826b8383b18ca64d51100f79
         assertTrue(appointment1 != null);
     }
 
