@@ -1,35 +1,16 @@
 package com.dh.dentalClinic.service;
 
-<<<<<<< HEAD
-=======
 import com.dh.dentalClinic.persistence.entities.Address;
->>>>>>> e965fd8b79ac1c9c826b8383b18ca64d51100f79
 import com.dh.dentalClinic.persistence.entities.Dentist;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-<<<<<<< HEAD
-import static org.junit.jupiter.api.Assertions.*;
-@SpringBootTest
-class DentistServiceTest {
-    @Autowired
-    private DentistService dentistService;
-    @Test
-    public  void crearDentista(){
-        Dentist dentist = new Dentist();
-        dentist.setFirstName("Tomas");
-        dentist.setLastName("Suarez");
-        dentist.setRegistration(789);
-        dentistService.save(dentist);
-        Dentist dentist1 = dentistService.getById(1L);
-        assertTrue(dentist1 != null);
-    }
-
-=======
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+
+
 @SpringBootTest
 class DentistServiceTest{
     @Autowired
@@ -51,29 +32,29 @@ class DentistServiceTest{
         assertTrue(list.size() == 1);
     }
 
-    /*ARROJA EXCEPCIÓN*/
-/*    @Test
-    public void testDelete (){
-        Dentist d = new Dentist();
-        d.setId(2L);
-        dentistService.save(d);
-        System.out.println(dentistService.getById(2L));
-        dentistService.delete(2L);
-    }*/
+    //ARROJA EXCEPCIÓN/
+//    @Test
+//    public void testDelete (){
+//        Dentist d = new Dentist();
+//        d.setId(2L);
+//        dentistService.save(d);
+////        System.out.println("hola" + dentistService.getById(2L));
+//        dentistService.delete(1L);
+//        assertTrue(dentistService.getById(2L)==null);
+//    }
 
-/*    @Test
-    public void testUpdate () {
-        Dentist d = new Dentist();
-        d.setId(1L);
-        d.setFirstName("Isabela");
-        dentistService.save(d);
-        Dentist dUpdated = new Dentist();
-        dUpdated.setId(1L);
-        dUpdated.setFirstName("Lucila");
-        dentistService.updateDentist(dUpdated);
+//            /    @Test
+//    public void testUpdate () {
+//        Dentist d = new Dentist();
+//        d.setId(1L);
+//        d.setFirstName("Isabela");
+//        dentistService.save(d);
+//        Dentist dUpdated = new Dentist();
+//        dUpdated.setId(1L);
+//        dUpdated.setFirstName("Lucila");
+//        dentistService.updateDentist(dUpdated);
+//
+//        assertTrue(dentistService.getById(1L).getFirstName() == "Lucila");
+//    }*/
 
-        assertTrue(dentistService.getById(1L).getFirstName() == "Lucila");
-    }*/
-
->>>>>>> e965fd8b79ac1c9c826b8383b18ca64d51100f79
 }
