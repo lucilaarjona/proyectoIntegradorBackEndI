@@ -17,16 +17,10 @@ class AppointmentServiceTest {
 
     @Test
     public void crearAppointment(){
-
         Appointment appointment = new Appointment();
-
-//        appointment.setPatient(new Patient());
-//        appointment.setDentist(new Dentist());
         appointment.setDate(new Date(2022-12-02));
-
         appointmentService.save(appointment);
         Appointment appointment1 = appointmentService.getById(1L);
-
         assertTrue(appointment1 != null);
     }
 
