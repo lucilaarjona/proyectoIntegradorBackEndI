@@ -32,4 +32,13 @@ public class AddressService {
     }
 
 
+    public Address getById(long id) {
+        if(repository.existsById(id)){
+            Address address = repository.findById(id).get();
+            logger.info("Looking for address with id:" + id);
+            return address;
+        }
+        logger.info("Address was not found");
+        return null;
+    }
 }
