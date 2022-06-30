@@ -12,7 +12,6 @@ import java.util.Set;
 
 @Getter
 @Setter
-@ToString
 @JsonIgnoreProperties({"hibernateLazyInitializer"})
 @Entity
 @Table(name = "dentists")
@@ -31,7 +30,7 @@ public class Dentist {
     @Column
     private Integer registration;
 
-    @OneToMany(mappedBy = "dentist", fetch = FetchType.LAZY )
+    @OneToMany(mappedBy = "dentist", fetch = FetchType.EAGER )
     @JsonIgnore
     private Set<Patient> patients = new HashSet<>();
 

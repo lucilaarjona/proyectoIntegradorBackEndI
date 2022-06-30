@@ -1,0 +1,31 @@
+2022-06-30 12:37:49 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 12:42:52 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 12:48:28 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 12:49:33 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-06-30 12:53:02 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 12:53:19 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-06-30 13:06:49 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 13:12:13 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 15:07:58 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 15:08:00 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-06-30 15:08:04 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 15:08:14 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-06-30 15:12:26 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 15:14:29 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 15:15:01 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-06-30 15:15:52 INFO  DentistService:69 - Dentist 1 was succesfully modified.
+  2022-06-30 15:18:21 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 15:18:22 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-06-30 15:18:22 INFO  DentistService:69 - Dentist 1 was succesfully modified.
+  2022-06-30 15:23:33 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 15:23:42 INFO  DentistService:69 - Dentist 1 was succesfully modified.
+  2022-06-30 15:23:46 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-06-30 15:27:29 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 15:27:29 INFO  DentistService:69 - Dentist 1 was succesfully modified.
+  2022-06-30 15:27:29 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-06-30 15:27:29 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-06-30 15:40:12 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 15:40:12 INFO  DentistService:69 - Dentist 1 was succesfully modified.
+  2022-06-30 15:40:12 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-06-30 15:40:12 INFO  DentistService:39 - Looking for dentist with id:1
+  

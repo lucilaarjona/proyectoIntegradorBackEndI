@@ -1,19 +1,13 @@
 package com.dh.dentalClinic.service;
-
-import com.dh.dentalClinic.persistence.entities.Address;
-<<<<<<< HEAD
-
-=======
->>>>>>> 47e2b1fd7ee4c7b9ff1cb09dcf27d3bf0233772a
 import com.dh.dentalClinic.persistence.entities.Dentist;
+import com.dh.dentalClinic.persistence.entities.Patient;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-<<<<<<< HEAD
-=======
 
->>>>>>> 47e2b1fd7ee4c7b9ff1cb09dcf27d3bf0233772a
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -40,7 +34,6 @@ class DentistServiceTest{
         assertTrue(list.size() == 1);
     }
 
-<<<<<<< HEAD
     @Test
     public void testDelete (){
 
@@ -56,39 +49,38 @@ class DentistServiceTest{
         Dentist d = new Dentist("Lucila", "Moncada",12345);
         d.setId(1L);
 
-        dentistService.save(d);
+
         Dentist dUpdated = d;
         dUpdated.setId(1L);
         dUpdated.setRegistration(9876);
+        dentistService.save(d);
         dentistService.updateDentist(dUpdated);
 
         assertTrue(dentistService.getById(1L).getFirstName() == "Lucila");
+        assertTrue(dentistService.getById(1L).getRegistration() == 9876);
     }
-=======
-    //ARROJA EXCEPCIÓN/
-//    @Test
-//    public void testDelete (){
-//        Dentist d = new Dentist();
-//        d.setId(2L);
-//        dentistService.save(d);
-////        System.out.println("hola" + dentistService.getById(2L));
-//        dentistService.delete(1L);
-//        assertTrue(dentistService.getById(2L)==null);
-//    }
 
-//            /    @Test
-//    public void testUpdate () {
-//        Dentist d = new Dentist();
-//        d.setId(1L);
-//        d.setFirstName("Isabela");
-//        dentistService.save(d);
-//        Dentist dUpdated = new Dentist();
-//        dUpdated.setId(1L);
-//        dUpdated.setFirstName("Lucila");
-//        dentistService.updateDentist(dUpdated);
-//
-//        assertTrue(dentistService.getById(1L).getFirstName() == "Lucila");
-//    }*/
+    @Test
+    public void testActualizar () {
+        Dentist d = new Dentist();
+        d.setId(1L);
+        d.setFirstName("Adrián");
+        dentistService.save(d);
 
->>>>>>> 47e2b1fd7ee4c7b9ff1cb09dcf27d3bf0233772a
+        Dentist dJSON = new Dentist();
+        dJSON.setId(1L);
+        dJSON.setFirstName("Lucila");
+        dJSON.setLastName("Arjona");
+        dJSON.setRegistration(11221);
+        Set<Patient> patients = new HashSet<>();
+        Patient patient2 = new Patient();
+        patients.add(patient2);
+
+
+        dJSON.setPatients(patients);
+
+        dentistService.getById(1L);
+        dentistService.updateDentist(dJSON);
+    }
+
 }

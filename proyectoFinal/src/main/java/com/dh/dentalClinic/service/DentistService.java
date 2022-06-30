@@ -59,14 +59,13 @@ public class DentistService {
         Long dentistId = d.getId();
 
         if(repository.findById(dentistId).isPresent()) {
-            Dentist dentistaAModificar = repository.getById(dentistId);
+            Dentist dentist = repository.findById(dentistId).get();
+            dentist.setFirstName(d.getFirstName());
+            dentist.setLastName(d.getLastName());
+            dentist.setRegistration(d.getRegistration());
+            dentist.setPatients(d.getPatients());
 
-            dentistaAModificar.setFirstName(d.getFirstName());
-            dentistaAModificar.setLastName(d.getLastName());
-            dentistaAModificar.setRegistration(d.getRegistration());
-            dentistaAModificar.setPatients(d.getPatients());
-
-            repository.save(dentistaAModificar);
+            repository.save(dentist);
             logger.info("Dentist " + dentistId +" was succesfully modified.");
             return "Dentist with Id: " + dentistId + " was modified.";
 
