@@ -34,53 +34,31 @@ class DentistServiceTest{
         assertTrue(list.size() == 1);
     }
 
-    @Test
-    public void testDelete (){
+        @Test
+        public void testDelete () {
+            Dentist d = new Dentist();
+            d.setId(1L);
+            dentistService.save(d);
+            dentistService.delete(1L);
+            assertTrue(dentistService.getById(1L) == null);
+        }
 
-        Dentist d = new Dentist();
-        d.setId(1L);
-        dentistService.save(d);
-        dentistService.delete(1L);
-        assertTrue(dentistService.getById(1L)==null);
+
+        @Test
+        public void testUpdate () {
+            Dentist d = new Dentist("Lucila", "Moncada", 12345);
+            d.setId(1L);
+
+
+            Dentist dUpdated = d;
+            dUpdated.setId(1L);
+            dUpdated.setRegistration(9876);
+            dentistService.save(d);
+            dentistService.updateDentist(dUpdated);
+
+            assertTrue(dentistService.getById(1L).getFirstName() == "Lucila");
+            assertTrue(dentistService.getById(1L).getRegistration() == 9876);
+        }
     }
 
-  @Test
-    public void testUpdate () {
-        Dentist d = new Dentist("Lucila", "Moncada",12345);
-        d.setId(1L);
 
-
-        Dentist dUpdated = d;
-        dUpdated.setId(1L);
-        dUpdated.setRegistration(9876);
-        dentistService.save(d);
-        dentistService.updateDentist(dUpdated);
-
-        assertTrue(dentistService.getById(1L).getFirstName() == "Lucila");
-        assertTrue(dentistService.getById(1L).getRegistration() == 9876);
-    }
-
-    @Test
-    public void testActualizar () {
-        Dentist d = new Dentist();
-        d.setId(1L);
-        d.setFirstName("Adrián");
-        dentistService.save(d);
-
-        Dentist dJSON = new Dentist();
-        dJSON.setId(1L);
-        dJSON.setFirstName("Lucila");
-        dJSON.setLastName("Arjona");
-        dJSON.setRegistration(11221);
-        Set<Patient> patients = new HashSet<>();
-        Patient patient2 = new Patient();
-        patients.add(patient2);
-
-
-        dJSON.setPatients(patients);
-
-        dentistService.getById(1L);
-        dentistService.updateDentist(dJSON);
-    }
-
-}

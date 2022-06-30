@@ -48,6 +48,7 @@ public class DentistService {
             repository.deleteById(id);
             logger.info("Dentist was succesfully deleted");
             return "Dentist id: " + id + " was succesfully deleted.";
+
         }
         logger.error("Dentist was not found");
         return "Dentist with id: " + id + " was not found.";

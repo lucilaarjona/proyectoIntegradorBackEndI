@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2022-06-30 12:37:49 INFO  DentistService:23 - Dentist was succesfully saved
   2022-06-30 12:42:52 INFO  DentistService:23 - Dentist was succesfully saved
   2022-06-30 12:48:28 INFO  DentistService:23 - Dentist was succesfully saved
@@ -28,4 +29,38 @@
   2022-06-30 15:40:12 INFO  DentistService:69 - Dentist 1 was succesfully modified.
   2022-06-30 15:40:12 INFO  DentistService:39 - Looking for dentist with id:1
   2022-06-30 15:40:12 INFO  DentistService:39 - Looking for dentist with id:1
+=======
+2022-06-30 14:33:02 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 14:33:02 INFO  DentistService:31 - Searching all dentists...
+  2022-06-30 14:33:02 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 14:33:03 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-06-30 14:33:03 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 14:33:03 INFO  DentistService:49 - Dentist was succesfully deleted
+  2022-06-30 14:33:03 INFO  DentistService:42 - Dentist was not found
+  2022-06-30 14:37:56 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 14:37:56 INFO  DentistService:31 - Searching all dentists...
+  2022-06-30 14:37:56 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 14:37:57 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-06-30 14:37:57 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 14:37:57 INFO  DentistService:49 - Dentist was succesfully deleted
+  2022-06-30 14:37:57 INFO  DentistService:42 - Dentist was not found
+  2022-06-30 14:37:57 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 14:37:57 ERROR DentistService:74 - Dentist doesn't exist
+  2022-06-30 14:37:57 INFO  DentistService:42 - Dentist was not found
+  2022-06-30 14:46:06 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 14:46:06 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-06-30 14:46:30 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 14:46:30 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-06-30 14:46:47 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 14:46:47 INFO  DentistService:31 - Searching all dentists...
+  2022-06-30 14:46:47 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 14:46:47 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-06-30 14:46:47 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 14:46:47 INFO  DentistService:49 - Dentist was succesfully deleted
+  2022-06-30 14:46:47 INFO  DentistService:42 - Dentist was not found
+  2022-06-30 14:46:47 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 14:46:47 INFO  DentistService:42 - Dentist was not found
+  2022-06-30 14:46:47 ERROR DentistService:74 - Dentist doesn't exist
+  2022-06-30 14:46:47 INFO  DentistService:42 - Dentist was not found
+>>>>>>> a7ef71f5569a5e2199c85bd2f1d2360453df88e0
   
