@@ -17,7 +17,10 @@ class AppointmentServiceTest {
 
     @Test
     public void crearAppointment(){
+<<<<<<< HEAD
 
+=======
+>>>>>>> 47e2b1fd7ee4c7b9ff1cb09dcf27d3bf0233772a
         Appointment appointment = new Appointment();
         appointment.setDate(new Date(2022-12-02));
         appointmentService.save(appointment);
