@@ -45,10 +45,9 @@ public class DentistService {
 
     public String delete(Long id) {
         if(repository.findById(id).isPresent()){
-            String productName = repository.getById(id).getLastName();
             repository.deleteById(id);
             logger.info("Dentist was succesfully deleted");
-            return "Dentist id: " + id + ", LastName: " + productName + " was succesfully deleted.";
+            return "Dentist id: " + id + " was succesfully deleted.";
         }
         logger.error("Dentist was not found");
         return "Dentist with id: " + id + " was not found.";
