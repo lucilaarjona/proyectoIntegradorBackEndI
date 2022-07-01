@@ -331,4 +331,45 @@
   2022-07-01 00:46:18 INFO  AppointmentService:39 - Looking for appointments with id:1
   2022-07-01 00:46:19 INFO  AppointmentService:49 - Appointment was succesfully deleted
   2022-07-01 00:46:19 INFO  AppointmentService:42 - Appointment was not found
+  2022-07-01 17:18:40 INFO  AppointmentService:22 - Appointment was succesfully saved
+  2022-07-01 17:18:40 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 17:18:40 INFO  AppointmentService:31 - Searching all appointments...
+  2022-07-01 17:18:40 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 17:18:41 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 17:18:41 INFO  AppointmentService:49 - Appointment was succesfully deleted
+  2022-07-01 17:18:41 INFO  AppointmentService:42 - Appointment was not found
+  2022-07-01 17:22:23 INFO  AppointmentService:22 - Appointment was succesfully saved
+  2022-07-01 17:22:24 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 17:22:24 INFO  AppointmentService:31 - Searching all appointments...
+  2022-07-01 17:22:24 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 17:22:24 INFO  AppointmentService:67 - Appointment 1 was succesfully modified.
+  2022-07-01 17:22:24 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 17:22:24 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 17:22:24 INFO  AppointmentService:49 - Appointment was succesfully deleted
+  2022-07-01 17:22:24 INFO  AppointmentService:42 - Appointment was not found
+  2022-07-01 17:25:04 INFO  AppointmentService:22 - Appointment was succesfully saved
+  2022-07-01 17:25:04 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 17:25:04 INFO  AppointmentService:31 - Searching all appointments...
+  2022-07-01 17:25:04 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 17:25:04 INFO  AppointmentService:67 - Appointment 1 was succesfully modified.
+  2022-07-01 17:25:04 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 17:25:04 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 17:25:04 INFO  AppointmentService:49 - Appointment was succesfully deleted
+  2022-07-01 17:25:04 INFO  AppointmentService:42 - Appointment was not found
+  2022-07-01 17:26:21 INFO  AppointmentService:22 - Appointment was succesfully saved
+  2022-07-01 17:26:21 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 17:26:21 INFO  AppointmentService:31 - Searching all appointments...
+  2022-07-01 17:26:21 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 17:26:21 INFO  AppointmentService:67 - Appointment 1 was succesfully modified.
+  2022-07-01 17:26:21 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 17:26:21 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 17:26:21 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 17:26:21 INFO  AppointmentService:49 - Appointment was succesfully deleted
+  2022-07-01 17:26:21 INFO  AppointmentService:42 - Appointment was not found
+  2022-07-01 17:40:16 INFO  AddressService:41 - Searching all addresses...
+  2022-07-01 17:40:17 INFO  AddressService:23 - Address was succesfully saved
+  2022-07-01 17:40:17 INFO  AddressService:49 - Looking for address with id:1
+  2022-07-01 17:40:59 INFO  AddressService:41 - Searching all addresses...
+  2022-07-01 17:40:59 INFO  AddressService:23 - Address was succesfully saved
+  2022-07-01 17:40:59 INFO  AddressService:49 - Looking for address with id:1
   
