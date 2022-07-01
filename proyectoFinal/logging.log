@@ -63,4 +63,272 @@
   2022-06-30 14:46:47 ERROR DentistService:74 - Dentist doesn't exist
   2022-06-30 14:46:47 INFO  DentistService:42 - Dentist was not found
 >>>>>>> a7ef71f5569a5e2199c85bd2f1d2360453df88e0
+  2022-06-30 23:21:57 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 23:21:57 INFO  DentistService:31 - Searching all dentists...
+  2022-06-30 23:21:58 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 23:21:58 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-06-30 23:21:58 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 23:21:58 INFO  DentistService:49 - Dentist was succesfully deleted
+  2022-06-30 23:21:58 INFO  DentistService:42 - Dentist was not found
+  2022-06-30 23:21:58 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 23:21:58 ERROR DentistService:74 - Dentist doesn't exist
+  2022-06-30 23:21:58 INFO  DentistService:42 - Dentist was not found
+  2022-06-30 23:23:21 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 23:23:21 INFO  DentistService:31 - Searching all dentists...
+  2022-06-30 23:23:21 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 23:23:21 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-06-30 23:23:21 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 23:23:21 INFO  DentistService:49 - Dentist was succesfully deleted
+  2022-06-30 23:23:21 INFO  DentistService:42 - Dentist was not found
+  2022-06-30 23:23:21 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 23:23:21 ERROR DentistService:74 - Dentist doesn't exist
+  2022-06-30 23:23:21 INFO  DentistService:42 - Dentist was not found
+  2022-06-30 23:27:38 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 23:27:38 INFO  DentistService:70 - Dentist 1 was succesfully modified.
+  2022-06-30 23:27:38 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-06-30 23:27:38 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-06-30 23:30:17 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 23:30:17 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-06-30 23:30:17 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 23:30:17 INFO  DentistService:70 - Dentist 1 was succesfully modified.
+  2022-06-30 23:30:17 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-06-30 23:30:17 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-06-30 23:30:17 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 23:30:17 INFO  DentistService:31 - Searching all dentists...
+  2022-06-30 23:30:17 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 23:30:17 INFO  DentistService:49 - Dentist was succesfully deleted
+  2022-06-30 23:30:17 INFO  DentistService:42 - Dentist was not found
+  2022-06-30 23:31:09 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 23:31:09 INFO  DentistService:70 - Dentist 1 was succesfully modified.
+  2022-06-30 23:31:09 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-06-30 23:31:09 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-06-30 23:31:09 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 23:31:09 INFO  DentistService:31 - Searching all dentists...
+  2022-06-30 23:31:09 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 23:31:09 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-06-30 23:31:09 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 23:31:09 INFO  DentistService:49 - Dentist was succesfully deleted
+  2022-06-30 23:31:09 INFO  DentistService:42 - Dentist was not found
+  2022-06-30 23:33:19 INFO  PatientService:23 - Patient was succesfully saved
+  2022-06-30 23:33:19 INFO  PatientService:40 - Looking for patient with id:1
+  2022-06-30 23:34:11 INFO  PatientService:23 - Patient was succesfully saved
+  2022-06-30 23:34:11 INFO  PatientService:40 - Looking for patient with id:1
+  2022-06-30 23:36:00 INFO  PatientService:23 - Patient was succesfully saved
+  2022-06-30 23:36:01 INFO  PatientService:40 - Looking for patient with id:1
+  2022-06-30 23:36:26 INFO  PatientService:23 - Patient was succesfully saved
+  2022-06-30 23:36:26 INFO  PatientService:40 - Looking for patient with id:1
+  2022-06-30 23:36:55 INFO  PatientService:23 - Patient was succesfully saved
+  2022-06-30 23:36:55 INFO  PatientService:40 - Looking for patient with id:1
+  2022-06-30 23:36:55 INFO  PatientService:40 - Looking for patient with id:1
+  2022-06-30 23:38:09 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 23:38:09 INFO  DentistService:70 - Dentist 1 was succesfully modified.
+  2022-06-30 23:38:09 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-06-30 23:38:09 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-06-30 23:38:09 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 23:38:09 INFO  DentistService:31 - Searching all dentists...
+  2022-06-30 23:38:10 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 23:38:10 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-06-30 23:38:10 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 23:38:10 INFO  DentistService:49 - Dentist was succesfully deleted
+  2022-06-30 23:38:10 INFO  DentistService:42 - Dentist was not found
+  2022-06-30 23:39:56 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 23:39:56 INFO  DentistService:31 - Searching all dentists...
+  2022-06-30 23:40:43 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 23:40:43 INFO  DentistService:70 - Dentist 1 was succesfully modified.
+  2022-06-30 23:40:43 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-06-30 23:40:43 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-06-30 23:40:43 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 23:40:43 INFO  DentistService:31 - Searching all dentists...
+  2022-06-30 23:40:43 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 23:40:43 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-06-30 23:40:43 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 23:40:43 INFO  DentistService:49 - Dentist was succesfully deleted
+  2022-06-30 23:40:43 INFO  DentistService:42 - Dentist was not found
+  2022-06-30 23:41:05 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 23:41:05 INFO  DentistService:70 - Dentist 1 was succesfully modified.
+  2022-06-30 23:41:06 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-06-30 23:41:06 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-06-30 23:41:06 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 23:41:06 INFO  DentistService:31 - Searching all dentists...
+  2022-06-30 23:41:06 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 23:41:06 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-06-30 23:41:06 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 23:41:06 INFO  DentistService:49 - Dentist was succesfully deleted
+  2022-06-30 23:41:06 INFO  DentistService:42 - Dentist was not found
+  2022-06-30 23:43:39 INFO  PatientService:23 - Patient was succesfully saved
+  2022-06-30 23:43:39 INFO  PatientService:40 - Looking for patient with id:1
+  2022-06-30 23:46:46 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 23:46:46 INFO  DentistService:70 - Dentist 1 was succesfully modified.
+  2022-06-30 23:46:46 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-06-30 23:46:46 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-06-30 23:46:46 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 23:46:46 INFO  DentistService:31 - Searching all dentists...
+  2022-06-30 23:46:46 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 23:46:46 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-06-30 23:46:46 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-06-30 23:46:46 INFO  DentistService:49 - Dentist was succesfully deleted
+  2022-06-30 23:46:47 INFO  DentistService:42 - Dentist was not found
+  2022-06-30 23:47:06 INFO  PatientService:23 - Patient was succesfully saved
+  2022-06-30 23:47:06 INFO  PatientService:40 - Looking for patient with id:1
+  2022-06-30 23:47:07 INFO  PatientService:33 - Searching all patients...
+  2022-06-30 23:47:56 INFO  PatientService:23 - Patient was succesfully saved
+  2022-06-30 23:47:56 ERROR PatientService:43 - Patient was not found
+  2022-06-30 23:47:56 INFO  PatientService:33 - Searching all patients...
+  2022-06-30 23:48:30 INFO  PatientService:23 - Patient was succesfully saved
+  2022-06-30 23:48:30 INFO  PatientService:40 - Looking for patient with id:1
+  2022-06-30 23:48:30 INFO  PatientService:33 - Searching all patients...
+  2022-06-30 23:54:56 INFO  PatientService:23 - Patient was succesfully saved
+  2022-06-30 23:56:26 INFO  PatientService:23 - Patient was succesfully saved
+  2022-06-30 23:58:22 INFO  PatientService:23 - Patient was succesfully saved
+  2022-06-30 23:58:22 INFO  PatientService:76 - Patient 1 was succesfully modified.
+  2022-06-30 23:58:23 INFO  PatientService:40 - Looking for patient with id:1
+  2022-06-30 23:58:23 INFO  PatientService:40 - Looking for patient with id:1
+  2022-06-30 23:59:13 INFO  PatientService:23 - Patient was succesfully saved
+  2022-06-30 23:59:13 INFO  PatientService:76 - Patient 1 was succesfully modified.
+  2022-06-30 23:59:14 INFO  PatientService:40 - Looking for patient with id:1
+  2022-06-30 23:59:14 INFO  PatientService:40 - Looking for patient with id:1
+  2022-06-30 23:59:35 INFO  PatientService:23 - Patient was succesfully saved
+  2022-06-30 23:59:35 INFO  PatientService:76 - Patient 1 was succesfully modified.
+  2022-06-30 23:59:35 INFO  PatientService:40 - Looking for patient with id:1
+  2022-06-30 23:59:35 INFO  PatientService:40 - Looking for patient with id:1
+  2022-07-01 00:02:13 INFO  PatientService:23 - Patient was succesfully saved
+  2022-07-01 00:02:13 INFO  PatientService:40 - Looking for patient with id:1
+  2022-07-01 00:02:13 INFO  PatientService:33 - Searching all patients...
+  2022-07-01 00:02:13 INFO  PatientService:40 - Looking for patient with id:1
+  2022-07-01 00:02:13 INFO  PatientService:76 - Patient 1 was succesfully modified.
+  2022-07-01 00:02:13 INFO  PatientService:40 - Looking for patient with id:1
+  2022-07-01 00:03:14 INFO  PatientService:23 - Patient was succesfully saved
+  2022-07-01 00:03:15 INFO  PatientService:40 - Looking for patient with id:1
+  2022-07-01 00:03:15 INFO  PatientService:33 - Searching all patients...
+  2022-07-01 00:03:15 INFO  PatientService:40 - Looking for patient with id:1
+  2022-07-01 00:03:15 INFO  PatientService:76 - Patient 1 was succesfully modified.
+  2022-07-01 00:03:15 INFO  PatientService:40 - Looking for patient with id:1
+  2022-07-01 00:03:15 INFO  PatientService:40 - Looking for patient with id:1
+  2022-07-01 00:05:10 INFO  PatientService:23 - Patient was succesfully saved
+  2022-07-01 00:05:10 INFO  PatientService:40 - Looking for patient with id:1
+  2022-07-01 00:05:10 INFO  PatientService:33 - Searching all patients...
+  2022-07-01 00:05:10 INFO  PatientService:40 - Looking for patient with id:1
+  2022-07-01 00:05:10 INFO  PatientService:76 - Patient 1 was succesfully modified.
+  2022-07-01 00:05:10 INFO  PatientService:40 - Looking for patient with id:1
+  2022-07-01 00:05:10 INFO  PatientService:40 - Looking for patient with id:1
+  2022-07-01 00:05:10 INFO  PatientService:40 - Looking for patient with id:1
+  2022-07-01 00:05:41 INFO  PatientService:23 - Patient was succesfully saved
+  2022-07-01 00:05:41 INFO  PatientService:40 - Looking for patient with id:1
+  2022-07-01 00:05:41 INFO  PatientService:33 - Searching all patients...
+  2022-07-01 00:05:41 INFO  PatientService:40 - Looking for patient with id:1
+  2022-07-01 00:05:41 INFO  PatientService:76 - Patient 1 was succesfully modified.
+  2022-07-01 00:05:41 INFO  PatientService:40 - Looking for patient with id:1
+  2022-07-01 00:05:41 INFO  PatientService:40 - Looking for patient with id:1
+  2022-07-01 00:06:53 INFO  PatientService:23 - Patient was succesfully saved
+  2022-07-01 00:06:53 INFO  PatientService:40 - Looking for patient with id:1
+  2022-07-01 00:06:53 INFO  PatientService:33 - Searching all patients...
+  2022-07-01 00:06:53 INFO  PatientService:40 - Looking for patient with id:1
+  2022-07-01 00:06:53 INFO  PatientService:76 - Patient 1 was succesfully modified.
+  2022-07-01 00:06:53 INFO  PatientService:40 - Looking for patient with id:1
+  2022-07-01 00:06:53 INFO  PatientService:40 - Looking for patient with id:1
+  2022-07-01 00:06:53 INFO  PatientService:40 - Looking for patient with id:1
+  2022-07-01 00:08:45 INFO  PatientService:23 - Patient was succesfully saved
+  2022-07-01 00:08:45 INFO  PatientService:40 - Looking for patient with id:1
+  2022-07-01 00:08:45 INFO  PatientService:33 - Searching all patients...
+  2022-07-01 00:08:45 INFO  PatientService:40 - Looking for patient with id:1
+  2022-07-01 00:08:45 INFO  PatientService:76 - Patient 1 was succesfully modified.
+  2022-07-01 00:08:45 INFO  PatientService:40 - Looking for patient with id:1
+  2022-07-01 00:08:45 INFO  PatientService:40 - Looking for patient with id:1
+  2022-07-01 00:08:45 INFO  PatientService:40 - Looking for patient with id:1
+  2022-07-01 00:08:45 INFO  PatientService:52 - Patient was succesfully deleted
+  2022-07-01 00:08:45 ERROR PatientService:43 - Patient was not found
+  2022-07-01 00:09:40 INFO  PatientService:23 - Patient was succesfully saved
+  2022-07-01 00:09:40 INFO  PatientService:40 - Looking for patient with id:1
+  2022-07-01 00:09:40 INFO  PatientService:33 - Searching all patients...
+  2022-07-01 00:09:40 INFO  PatientService:40 - Looking for patient with id:1
+  2022-07-01 00:09:41 INFO  PatientService:75 - Patient 1 was succesfully modified.
+  2022-07-01 00:09:41 INFO  PatientService:40 - Looking for patient with id:1
+  2022-07-01 00:09:41 INFO  PatientService:40 - Looking for patient with id:1
+  2022-07-01 00:09:41 INFO  PatientService:40 - Looking for patient with id:1
+  2022-07-01 00:11:45 INFO  PatientService:23 - Patient was succesfully saved
+  2022-07-01 00:11:45 INFO  PatientService:40 - Looking for patient with id:1
+  2022-07-01 00:11:45 INFO  PatientService:33 - Searching all patients...
+  2022-07-01 00:11:45 INFO  PatientService:40 - Looking for patient with id:1
+  2022-07-01 00:11:46 INFO  PatientService:75 - Patient 1 was succesfully modified.
+  2022-07-01 00:11:46 INFO  PatientService:40 - Looking for patient with id:1
+  2022-07-01 00:11:46 INFO  PatientService:40 - Looking for patient with id:1
+  2022-07-01 00:11:46 INFO  PatientService:40 - Looking for patient with id:1
+  2022-07-01 00:11:46 INFO  PatientService:51 - Patient was succesfully deleted
+  2022-07-01 00:11:46 ERROR PatientService:43 - Patient was not found
+  2022-07-01 00:15:23 INFO  AppointmentService:22 - Appointment was succesfully saved
+  2022-07-01 00:15:23 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 00:15:52 INFO  AppointmentService:22 - Appointment was succesfully saved
+  2022-07-01 00:15:52 INFO  AppointmentService:42 - Appointment was not found
+  2022-07-01 00:16:16 INFO  AppointmentService:22 - Appointment was succesfully saved
+  2022-07-01 00:16:16 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 00:17:59 INFO  AppointmentService:22 - Appointment was succesfully saved
+  2022-07-01 00:17:59 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 00:17:59 INFO  AppointmentService:31 - Searching all appointments...
+  2022-07-01 00:18:00 INFO  AppointmentService:22 - Appointment was succesfully saved
+  2022-07-01 00:18:00 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 00:18:26 INFO  AppointmentService:22 - Appointment was succesfully saved
+  2022-07-01 00:18:26 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 00:18:26 INFO  AppointmentService:31 - Searching all appointments...
+  2022-07-01 00:19:10 INFO  AppointmentService:22 - Appointment was succesfully saved
+  2022-07-01 00:19:10 INFO  AppointmentService:22 - Appointment was succesfully saved
+  2022-07-01 00:19:10 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 00:19:10 INFO  AppointmentService:31 - Searching all appointments...
+  2022-07-01 00:20:19 INFO  AppointmentService:22 - Appointment was succesfully saved
+  2022-07-01 00:20:19 INFO  AppointmentService:22 - Appointment was succesfully saved
+  2022-07-01 00:20:20 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 00:20:20 INFO  AppointmentService:31 - Searching all appointments...
+  2022-07-01 00:20:42 INFO  AppointmentService:22 - Appointment was succesfully saved
+  2022-07-01 00:20:42 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 00:20:42 INFO  AppointmentService:31 - Searching all appointments...
+  2022-07-01 00:21:33 INFO  AppointmentService:22 - Appointment was succesfully saved
+  2022-07-01 00:21:33 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 00:21:33 INFO  AppointmentService:31 - Searching all appointments...
+  2022-07-01 00:27:43 INFO  AppointmentService:22 - Appointment was succesfully saved
+  2022-07-01 00:27:43 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 00:27:43 INFO  AppointmentService:31 - Searching all appointments...
+  2022-07-01 00:27:43 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 00:30:30 INFO  AppointmentService:22 - Appointment was succesfully saved
+  2022-07-01 00:30:30 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 00:30:30 INFO  AppointmentService:31 - Searching all appointments...
+  2022-07-01 00:30:30 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 00:32:40 INFO  AppointmentService:22 - Appointment was succesfully saved
+  2022-07-01 00:32:40 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 00:32:40 INFO  AppointmentService:31 - Searching all appointments...
+  2022-07-01 00:32:40 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 00:33:42 INFO  AppointmentService:22 - Appointment was succesfully saved
+  2022-07-01 00:33:42 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 00:33:42 INFO  AppointmentService:31 - Searching all appointments...
+  2022-07-01 00:33:42 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 00:33:42 ERROR AppointmentService:72 - Appointment doesn't exist
+  2022-07-01 00:33:42 INFO  AppointmentService:42 - Appointment was not found
+  2022-07-01 00:35:12 INFO  AppointmentService:22 - Appointment was succesfully saved
+  2022-07-01 00:35:12 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 00:35:12 INFO  AppointmentService:31 - Searching all appointments...
+  2022-07-01 00:35:12 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 00:35:13 INFO  AppointmentService:68 - Appointment 1 was succesfully modified.
+  2022-07-01 00:35:13 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 00:36:53 INFO  AppointmentService:22 - Appointment was succesfully saved
+  2022-07-01 00:36:53 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 00:36:53 INFO  AppointmentService:31 - Searching all appointments...
+  2022-07-01 00:36:53 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 00:39:07 INFO  AppointmentService:22 - Appointment was succesfully saved
+  2022-07-01 00:39:07 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 00:39:07 INFO  AppointmentService:31 - Searching all appointments...
+  2022-07-01 00:39:07 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 00:42:01 INFO  AppointmentService:22 - Appointment was succesfully saved
+  2022-07-01 00:42:01 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 00:42:01 INFO  AppointmentService:31 - Searching all appointments...
+  2022-07-01 00:42:02 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 00:43:54 INFO  AppointmentService:31 - Searching all appointments...
+  2022-07-01 00:43:54 INFO  AppointmentService:42 - Appointment was not found
+  2022-07-01 00:44:33 INFO  AppointmentService:22 - Appointment was succesfully saved
+  2022-07-01 00:44:33 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 00:44:33 INFO  AppointmentService:31 - Searching all appointments...
+  2022-07-01 00:44:33 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 00:46:18 INFO  AppointmentService:22 - Appointment was succesfully saved
+  2022-07-01 00:46:18 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 00:46:18 INFO  AppointmentService:31 - Searching all appointments...
+  2022-07-01 00:46:18 INFO  AppointmentService:39 - Looking for appointments with id:1
+  2022-07-01 00:46:19 INFO  AppointmentService:49 - Appointment was succesfully deleted
+  2022-07-01 00:46:19 INFO  AppointmentService:42 - Appointment was not found
   

@@ -1,36 +1,57 @@
 package com.dh.dentalClinic.service;
 
+import com.dh.dentalClinic.persistence.entities.Dentist;
 import com.dh.dentalClinic.persistence.entities.Patient;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Date;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class PatientServiceTest {
     @Autowired
-    private PatientService patienteService;
+    PatientService patientService;
 
+    @Order(1)
     @Test
-    public void crearPaciente(){
-
+    public void testCreate(){
         Patient patient = new Patient();
+        patient.setFirstName("Lucila");
+        patientService.save(patient);
+        Patient patient1 = patientService.getById(1L);
+        assertTrue(patient1 != null);
+    }
 
+    @Order(2)
+    @Test
+    public void testReadAll () {
+        List list = patientService.getAll();
+        assertTrue(list.size() == 1);
+    }
 
-        patient.setFirstName("Adrian");
-        patient.setLastName("Acosta");
-        patient.setDni("45588896");
-        patient.setAdmissionDate(new Date(2022-06-06));
-//        patient.setDentist(new Dentist());
-//        patient.setAddress(new Address());
-        patienteService.save(patient);
+    @Order(3)
+    @Test
+    public void testUpdate () {
+        Patient dUpdated = patientService.getById(1L);
+        dUpdated.setLastName("Moncada");
+        patientService.updatePatient(dUpdated);
 
-        Patient patient1 = patienteService.getById(1L);
-        System.out.println(patient);
+        assertTrue(patientService.getById(1L).getFirstName() == "Lucila");
+        assertTrue(patientService.getById(1L).getLastName() == "Moncada");
+    }
 
-        assertTrue(patient != null);
+    @Order(4)
+    @Test
+    public void testDelete () {
+        patientService.delete(patientService.getById(1L).getId());
+        assertTrue(patientService.getById(1L) == null);
     }
 
 }
