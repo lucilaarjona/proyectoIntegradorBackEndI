@@ -33,11 +33,17 @@ class AppointmentServiceTest {
         assertTrue(appointmentService.getAll().size() == 1);
     }
 
-/*    @Order(3)
-        @Test
-        public void testUpdate () {
+    @Order(3)
+    @Test
+    public void testUpdate () {
+        Appointment dUpdated = appointmentService.getById(1L);
+        dUpdated.setDate(new Date(2000-02-02));
+        appointmentService.updateAppointment(dUpdated);
+        Date date = dUpdated.getDate();
+        System.out.println(appointmentService.getById(1L).getDate());
+        assertTrue(appointmentService.getById(1L).getDate() != null);
 
-        }*/
+    }
 
     @Order(4)
     @Test
