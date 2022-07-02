@@ -1,20 +1,15 @@
 package com.dh.dentalClinic.service;
-
-
 import com.dh.dentalClinic.persistence.entities.Address;
-import com.dh.dentalClinic.persistence.entities.Patient;
-import com.dh.dentalClinic.persistence.repository.AddressRepository;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
+
 @SpringBootTest
 class AddressServiceTest {
     @Autowired
-
     AddressService addressService;
     @Order(1)
     @Test

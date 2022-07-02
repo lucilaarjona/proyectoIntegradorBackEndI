@@ -1,6 +1,4 @@
 package com.dh.dentalClinic.service;
-
-import com.dh.dentalClinic.persistence.entities.Dentist;
 import com.dh.dentalClinic.persistence.entities.Patient;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
@@ -8,11 +6,9 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import java.util.Date;
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
+
 @SpringBootTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class PatientServiceTest {
@@ -42,7 +38,6 @@ class PatientServiceTest {
         Patient dUpdated = patientService.getById(1L);
         dUpdated.setLastName("Moncada");
         patientService.updatePatient(dUpdated);
-
         assertTrue(patientService.getById(1L).getFirstName() == "Lucila");
         assertTrue(patientService.getById(1L).getLastName() == "Moncada");
     }

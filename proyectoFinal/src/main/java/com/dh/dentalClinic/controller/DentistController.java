@@ -1,6 +1,5 @@
 package com.dh.dentalClinic.controller;
 import com.dh.dentalClinic.persistence.entities.Dentist;
-import com.dh.dentalClinic.persistence.entities.Patient;
 import com.dh.dentalClinic.service.DentistService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +14,7 @@ public class DentistController {
     DentistService service;
 
     @PostMapping
-    public ResponseEntity<String> createDentist(@RequestBody Dentist d) {
+    public ResponseEntity<String> create(@RequestBody Dentist d) {
         ResponseEntity<String> response = null;
 
         if(service.save(d) != null) {
@@ -27,12 +26,12 @@ public class DentistController {
     }
 
     @RequestMapping(value = "", method = RequestMethod.GET, produces = "application/json")
-    public List<Dentist> getDentist() {
+    public List<Dentist> getAll() {
         return service.getAll();
     }
 
     @GetMapping("/{id}")
-    public Dentist getPatientById(@PathVariable Long id) {
+    public Dentist getById(@PathVariable Long id) {
         return service.getById(id);
     }
 
@@ -43,10 +42,8 @@ public class DentistController {
     }
 
     @PutMapping
-    public String updateDentist(@RequestBody Dentist dentist){
-        return service.updateDentist(dentist);
+    public String update(@RequestBody Dentist d){
+        return service.updateDentist(d);
     }
-
-
 
 }

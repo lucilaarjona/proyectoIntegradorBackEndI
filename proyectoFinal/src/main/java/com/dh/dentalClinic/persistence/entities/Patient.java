@@ -1,20 +1,16 @@
 package com.dh.dentalClinic.persistence.entities;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-
 import javax.persistence.*;
 import java.util.Date;
 @Getter
 @Setter
 @ToString
-
 @Entity
 @Table(name = "patients")
 public class Patient {
+
     @Id
     @SequenceGenerator(name = "patient_sequence", sequenceName = "patient_sequence", allocationSize = 1)
     @GeneratedValue (strategy = GenerationType.SEQUENCE, generator = "patient_sequence")
@@ -45,7 +41,6 @@ public class Patient {
     }
 
     public Patient(String firstName, String lastName, String dni, Date admissionDate) {
-
         this.firstName = firstName;
         this.lastName = lastName;
         this.dni = dni;

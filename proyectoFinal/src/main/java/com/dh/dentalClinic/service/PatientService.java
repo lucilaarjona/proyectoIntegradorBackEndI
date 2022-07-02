@@ -1,14 +1,10 @@
 package com.dh.dentalClinic.service;
-
-
 import com.dh.dentalClinic.persistence.entities.Patient;
 import com.dh.dentalClinic.persistence.repository.PatientRepository;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class PatientService {
@@ -27,7 +23,6 @@ public class PatientService {
             return null;
         }
     }
-
 
     public List<Patient> getAll() {
         logger.info("Searching all patients...");
@@ -55,28 +50,25 @@ public class PatientService {
         return "Patient id: " + id + " was not found.";
     }
 
-
     public String updatePatient(Patient p){
-        Long patientId = p.getId();
+        Long id = p.getId();
 
-        if(repository.findById(patientId).isPresent()) {
-            /*logger.info(repository.getById(p.getAddress().getId()));*/
-            /*Patient pacienteAModificar = repository.getById(patientId);*/
-            Patient pacienteAModificar = repository.findById(patientId).get();
-            pacienteAModificar.setFirstName(p.getFirstName());
-            pacienteAModificar.setLastName(p.getLastName());
-            pacienteAModificar.setDni(p.getDni());
-            pacienteAModificar.setAdmissionDate(p.getAdmissionDate());
-            pacienteAModificar.setAddress(p.getAddress());
-            pacienteAModificar.setDentist(p.getDentist());
+        if(repository.findById(id).isPresent()) {
+            Patient modifiedP = repository.findById(id).get();
+            modifiedP.setFirstName(p.getFirstName());
+            modifiedP.setLastName(p.getLastName());
+            modifiedP.setDni(p.getDni());
+            modifiedP.setAdmissionDate(p.getAdmissionDate());
+            modifiedP.setAddress(p.getAddress());
+            modifiedP.setDentist(p.getDentist());
 
-            repository.save(pacienteAModificar);
+            repository.save(modifiedP);
 
-            logger.info("Patient " + patientId +" was succesfully modified.");
-            return "Patient with Id: " + patientId + " was modified.";
+            logger.info("Patient " + id +" was succesfully modified.");
+            return "Patient with Id: " + id + " was modified.";
         } else {
             logger.error("Patient doesn't exist");
-            return "Patient with Id: " + patientId + " doesn't exist.";
+            return "Patient with Id: " + id + " doesn't exist.";
         }
     }
 }
