@@ -1,6 +1,8 @@
 package com.dh.dentalClinic.controller;
 import com.dh.dentalClinic.persistence.entities.Address;
+import com.dh.dentalClinic.persistence.entities.Appointment;
 import com.dh.dentalClinic.service.AddressService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -9,6 +11,9 @@ import java.util.List;
 @RestController
 @RequestMapping("/addresses")
 public class AddressController {
+
+    private static final Logger logger = Logger.getLogger(AddressController.class);
+
     @Autowired
     AddressService service;
 
@@ -27,6 +32,21 @@ public class AddressController {
     @RequestMapping(value = "", method = RequestMethod.GET, produces = "application/json")
     public List<Address> getAll() {
         return service.getAll();
+    }
+
+    @GetMapping("/{id}")
+    public Address getById(@PathVariable Long id) {
+        return service.getById(id);
+    }
+
+    @DeleteMapping(value = "{id}")
+    public String delete(@PathVariable Long id) {
+        return service.delete(id);
+    }
+
+    @PutMapping("")
+    public String update(@RequestBody Address a){
+        return service.updateAppointment(a);
     }
 
 }

@@ -1,6 +1,8 @@
 package com.dh.dentalClinic.controller;
 import com.dh.dentalClinic.persistence.entities.Dentist;
+import com.dh.dentalClinic.service.AddressService;
 import com.dh.dentalClinic.service.DentistService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -9,6 +11,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/dentists")
 public class DentistController {
+
+    private static final Logger logger = Logger.getLogger(DentistController.class);
 
     @Autowired
     DentistService service;
@@ -34,8 +38,7 @@ public class DentistController {
     public Dentist getById(@PathVariable Long id) {
         return service.getById(id);
     }
-
-
+    
     @DeleteMapping(value = "{id}")
     public String delete(@PathVariable Long id) {
         return service.delete(id);

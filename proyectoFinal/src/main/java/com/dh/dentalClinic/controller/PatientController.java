@@ -1,6 +1,8 @@
 package com.dh.dentalClinic.controller;
 import com.dh.dentalClinic.persistence.entities.Patient;
+import com.dh.dentalClinic.service.AddressService;
 import com.dh.dentalClinic.service.PatientService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -9,6 +11,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/patients")
 public class PatientController {
+
+    private static final Logger logger = Logger.getLogger(PatientController.class);
 
     @Autowired
     PatientService service;
