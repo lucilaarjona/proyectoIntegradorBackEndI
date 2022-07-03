@@ -1,13 +1,9 @@
 package com.dh.dentalClinic.service;
-
 import com.dh.dentalClinic.persistence.entities.Dentist;
-import com.dh.dentalClinic.persistence.entities.Patient;
 import com.dh.dentalClinic.persistence.repository.DentistRepository;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-
 import java.util.List;
 
 @Service
@@ -54,25 +50,23 @@ public class DentistService {
         return "Dentist with id: " + id + " was not found.";
     }
 
-
-
     public String updateDentist(Dentist d){
-        Long dentistId = d.getId();
+        Long id = d.getId();
 
-        if(repository.findById(dentistId).isPresent()) {
-            Dentist dentist = repository.findById(dentistId).get();
-            dentist.setFirstName(d.getFirstName());
-            dentist.setLastName(d.getLastName());
-            dentist.setRegistration(d.getRegistration());
-            dentist.setPatients(d.getPatients());
+        if(repository.findById(id).isPresent()) {
+            Dentist modifiedD = repository.findById(id).get();
+            modifiedD.setFirstName(d.getFirstName());
+            modifiedD.setLastName(d.getLastName());
+            modifiedD.setRegistration(d.getRegistration());
+            modifiedD.setPatients(d.getPatients());
 
-            repository.save(dentist);
-            logger.info("Dentist " + dentistId +" was succesfully modified.");
-            return "Dentist with Id: " + dentistId + " was modified.";
+            repository.save(modifiedD);
+            logger.info("Dentist " + id +" was succesfully modified.");
+            return "Dentist with Id: " + id + " was modified.";
 
         } else {
             logger.error("Dentist doesn't exist");
-            return "Dentist with Id " + dentistId + " does not exist.";
+            return "Dentist with Id " + id + " does not exist.";
         }
     }
 }

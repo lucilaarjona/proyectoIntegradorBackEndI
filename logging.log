@@ -1,2 +1,29 @@
 2022-06-29 23:56:32 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-07-01 00:52:00 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-07-01 00:52:03 INFO  DentistService:31 - Searching all dentists...
+  2022-07-01 00:52:10 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-07-01 00:52:14 INFO  DentistService:70 - Dentist 1 was succesfully modified.
+  2022-07-01 00:52:20 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-07-01 00:52:23 INFO  DentistService:49 - Dentist was succesfully deleted
+  2022-07-01 00:52:28 INFO  DentistService:31 - Searching all dentists...
+  2022-07-01 00:52:31 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-07-01 00:52:42 INFO  AddressService:23 - Address was succesfully saved
+  2022-07-01 00:52:57 INFO  PatientService:23 - Patient was succesfully saved
+  2022-07-01 00:53:01 INFO  PatientService:33 - Searching all patients...
+  2022-07-01 00:53:05 ERROR PatientService:43 - Patient was not found
+  2022-07-02 16:10:07 INFO  DentistService:23 - Dentist was succesfully saved
+  2022-07-02 16:10:10 INFO  DentistService:31 - Searching all dentists...
+  2022-07-02 16:10:16 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-07-02 16:10:20 INFO  DentistService:70 - Dentist 1 was succesfully modified.
+  2022-07-02 16:10:25 INFO  DentistService:39 - Looking for dentist with id:1
+  2022-07-02 16:10:38 INFO  AddressService:23 - Address was succesfully saved
+  2022-07-02 16:10:42 INFO  AddressService:41 - Searching all addresses...
+  2022-07-02 16:10:54 INFO  PatientService:23 - Patient was succesfully saved
+  2022-07-02 16:10:57 INFO  PatientService:33 - Searching all patients...
+  2022-07-02 16:11:05 INFO  PatientService:40 - Looking for patient with id:1
+  2022-07-02 16:11:37 INFO  AddressService:23 - Address was succesfully saved
+  2022-07-02 16:11:49 INFO  PatientService:75 - Patient 1 was succesfully modified.
+  2022-07-02 16:11:56 INFO  PatientService:40 - Looking for patient with id:1
+  2022-07-02 16:12:12 INFO  AppointmentService:22 - Appointment was succesfully saved
+  2022-07-02 16:12:17 INFO  AppointmentService:31 - Searching all appointments...
   

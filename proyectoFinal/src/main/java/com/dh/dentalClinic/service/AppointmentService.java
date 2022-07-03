@@ -1,7 +1,5 @@
 package com.dh.dentalClinic.service;
-
 import com.dh.dentalClinic.persistence.entities.Appointment;
-import com.dh.dentalClinic.persistence.entities.Dentist;
 import com.dh.dentalClinic.persistence.repository.AppointmentsRepository;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,22 +52,22 @@ public class AppointmentService {
     }
 
     public String updateAppointment(Appointment a){
-        Long appId = a.getId();
+        Long id = a.getId();
 
-        if(repository.findById(appId).isPresent()) {
-            Appointment modifiedAppointment = repository.findById(appId).get();
+        if(repository.findById(id).isPresent()) {
+            Appointment modifiedA = repository.findById(id).get();
 
-            modifiedAppointment.setPatient(a.getPatient());
-            modifiedAppointment.setDentist(a.getDentist());
-            modifiedAppointment.setDate(a.getDate());
+            modifiedA.setPatient(a.getPatient());
+            modifiedA.setDentist(a.getDentist());
+            modifiedA.setDate(a.getDate());
 
-            repository.save(modifiedAppointment);
-            logger.info("Appointment " + appId +" was succesfully modified.");
-            return "Appointment with Id: " + appId + " was modified.";
+            repository.save(modifiedA);
+            logger.info("Appointment " + id +" was succesfully modified.");
+            return "Appointment with Id: " + id + " was modified.";
 
         } else {
             logger.error("Appointment doesn't exist");
-            return "Appointment with Id " + appId + " does not exist.";
+            return "Appointment with Id " + id + " does not exist.";
         }
     }
 }

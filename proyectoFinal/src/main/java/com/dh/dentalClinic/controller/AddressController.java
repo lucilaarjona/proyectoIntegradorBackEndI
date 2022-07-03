@@ -1,11 +1,9 @@
 package com.dh.dentalClinic.controller;
-
 import com.dh.dentalClinic.persistence.entities.Address;
 import com.dh.dentalClinic.service.AddressService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -15,7 +13,7 @@ public class AddressController {
     AddressService service;
 
     @PostMapping("")
-    public ResponseEntity<String> createAddress(@RequestBody Address a) {
+    public ResponseEntity<String> create(@RequestBody Address a) {
         ResponseEntity<String> response = null;
 
         if(service.save(a) != null) {
@@ -27,7 +25,8 @@ public class AddressController {
     }
 
     @RequestMapping(value = "", method = RequestMethod.GET, produces = "application/json")
-    public List<Address> getAllAppointments() {
+    public List<Address> getAll() {
         return service.getAll();
     }
+
 }
