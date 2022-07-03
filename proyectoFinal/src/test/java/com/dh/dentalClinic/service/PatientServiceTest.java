@@ -1,4 +1,5 @@
 package com.dh.dentalClinic.service;
+import com.dh.dentalClinic.persistence.entities.Appointment;
 import com.dh.dentalClinic.persistence.entities.Patient;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
@@ -43,6 +44,16 @@ class PatientServiceTest {
     }
 
     @Order(4)
+    @Test
+    public void testReadById () {
+        Patient p = new Patient();
+        p.setId(1L);
+        patientService.save(p);
+        Patient patient = patientService.getById(1L);
+        assertTrue(patient.getId() != null);
+    }
+
+    @Order(5)
     @Test
     public void testDelete () {
         patientService.delete(patientService.getById(1L).getId());
