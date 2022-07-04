@@ -10,7 +10,11 @@ public class GlobalExceptions {
 
     @ExceptionHandler({ResourceNotFoundException.class})
     public ResponseEntity<String> procesarErrorBadRequest(ResourceNotFoundException ex) {
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
+    }
+    @ExceptionHandler({BadRequestException.class})
+    public ResponseEntity<String> procesarErrorBadRequest(BadRequestException ex) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage()/*+ " capturado desde la clase... "+this.getClass().getName()+" de manera global"*/);
     }
 
 }

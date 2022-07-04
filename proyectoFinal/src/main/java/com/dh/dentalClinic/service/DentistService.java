@@ -1,4 +1,6 @@
 package com.dh.dentalClinic.service;
+import com.dh.dentalClinic.exceptions.BadRequestException;
+import com.dh.dentalClinic.exceptions.GlobalExceptions;
 import com.dh.dentalClinic.persistence.entities.Dentist;
 import com.dh.dentalClinic.persistence.repository.DentistRepository;
 import org.apache.log4j.Logger;
@@ -7,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class DentistService {
+public class DentistService extends GlobalExceptions {
 
     private static final Logger logger = Logger.getLogger(DentistService.class);
 
@@ -23,8 +25,11 @@ public class DentistService {
             return "There was something wrong...";
         }
     }
-    public List<Dentist> getAll(){
+    public List<Dentist> getAll() throws BadRequestException{
         logger.info("Searching all dentists...");
+        if (repository.findAll().size()== 0) {
+            throw new BadRequestException("There aren't dentists");
+        }
         return repository.findAll();
     }
 
@@ -39,15 +44,16 @@ public class DentistService {
         return null;
     }
 
-    public String delete(Long id) {
+    public void delete(Long id) throws BadRequestException {
         if(repository.findById(id).isPresent()){
             repository.deleteById(id);
             logger.info("Dentist was succesfully deleted");
-            return "Dentist id: " + id + " was succesfully deleted.";
+         //   return "Dentist id: " + id + " was succesfully deleted.";
 
         }
         logger.error("Dentist was not found");
-        return "Dentist with id: " + id + " was not found.";
+        throw new BadRequestException("Dentist not found.");
+       // return "Dentist with id: " + id + " was not found.";
     }
 
     public String updateDentist(Dentist d){

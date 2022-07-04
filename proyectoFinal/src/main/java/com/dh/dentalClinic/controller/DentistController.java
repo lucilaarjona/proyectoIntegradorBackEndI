@@ -1,4 +1,5 @@
 package com.dh.dentalClinic.controller;
+import com.dh.dentalClinic.exceptions.BadRequestException;
 import com.dh.dentalClinic.persistence.entities.Dentist;
 import com.dh.dentalClinic.service.AddressService;
 import com.dh.dentalClinic.service.DentistService;
@@ -10,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/dentists")
-public class DentistController {
+public class DentistController   {
 
     private static final Logger logger = Logger.getLogger(DentistController.class);
 
@@ -30,8 +31,9 @@ public class DentistController {
     }
 
     @RequestMapping(value = "", method = RequestMethod.GET, produces = "application/json")
-    public List<Dentist> getAll() {
+    public List<Dentist> getAll() throws BadRequestException {
         return service.getAll();
+
     }
 
     @GetMapping("/{id}")
@@ -40,8 +42,8 @@ public class DentistController {
     }
     
     @DeleteMapping(value = "{id}")
-    public String delete(@PathVariable Long id) {
-        return service.delete(id);
+    public void delete(@PathVariable Long id) throws BadRequestException {
+         service.delete(id);
     }
 
     @PutMapping
