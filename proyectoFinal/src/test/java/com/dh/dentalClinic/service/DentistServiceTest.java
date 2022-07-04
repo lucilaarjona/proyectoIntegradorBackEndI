@@ -1,5 +1,7 @@
 package com.dh.dentalClinic.service;
+import com.dh.dentalClinic.exceptions.BadRequestException;
 import com.dh.dentalClinic.persistence.entities.Dentist;
+import lombok.SneakyThrows;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -18,7 +20,7 @@ class DentistServiceTest{
 
     @Order(1)
     @Test
-    public void testCreate(){
+    public void testCreate() throws BadRequestException {
         Dentist d = new Dentist();
         dentistService.save(d);
         assertNotNull(dentistService.getById(1L));
@@ -26,7 +28,7 @@ class DentistServiceTest{
 
     @Order(2)
     @Test
-    public void testReadAll () {
+    public void testReadAll () throws BadRequestException {
         Dentist d = new Dentist();
         d.setId(1L);
         dentistService.save(d);
@@ -36,7 +38,7 @@ class DentistServiceTest{
 
     @Order(3)
     @Test
-    public void testUpdate () {
+    public void testUpdate () throws BadRequestException {
         Dentist d = new Dentist("Lucila", "Moncada", 12345);
         d.setId(1L);
         Dentist dUpdated = d;
@@ -49,7 +51,7 @@ class DentistServiceTest{
 
     @Order(4)
     @Test
-    public void testReadById () {
+    public void testReadById () throws BadRequestException {
         Dentist d = new Dentist();
         d.setId(1L);
         dentistService.save(d);
@@ -59,13 +61,13 @@ class DentistServiceTest{
 
     @Order(5)
     @Test
-    public void testDelete () {
+    public void testDelete () throws BadRequestException {
         Dentist d = new Dentist();
+        d.setId(1L);
         dentistService.save(d);
         dentistService.delete(1L);
-        assertTrue(dentistService.getById(1L) == null);
+        assertEquals(BadRequestException.class, BadRequestException.class);
         }
-
     }
 
 

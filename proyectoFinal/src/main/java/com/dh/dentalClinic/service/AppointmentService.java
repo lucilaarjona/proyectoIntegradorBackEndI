@@ -1,4 +1,5 @@
 package com.dh.dentalClinic.service;
+import com.dh.dentalClinic.exceptions.BadRequestException;
 import com.dh.dentalClinic.persistence.entities.Appointment;
 import com.dh.dentalClinic.persistence.repository.AppointmentsRepository;
 import org.apache.log4j.Logger;
@@ -15,43 +16,46 @@ public class AppointmentService {
     @Autowired
     AppointmentsRepository repository;
 
-    public String save (Appointment a){
+    public String save (Appointment a) throws BadRequestException {
         if (repository.save(a)!=null){
             logger.info("Appointment was succesfully saved");
-            return "Ok";
+            return "New appointment succesfully saved";
         }else{
             logger.error("There was something wrong...");
-            return null;
+            throw new BadRequestException("There was something wrong...");
         }
     }
 
-    public List<Appointment> getAll(){
+    public List<Appointment> getAll() throws BadRequestException{
         logger.info("Searching all appointments...");
+        if (repository.findAll().size() == 0) {
+            throw new BadRequestException("There aren't any appointments created yet.");
+        }
         return repository.findAll();
     }
 
-    public Appointment getById(Long id){
+    public Appointment getById(Long id) throws BadRequestException{
 
         if(repository.existsById(id)){
             Appointment appointment = repository.findById(id).get();
             logger.info("Looking for appointments with id:" + id);
             return appointment;
         }
-        logger.info("Appointment was not found");
-        return null;
+        logger.info("Appointment with id " + id + " was not found.");
+        throw new BadRequestException("Appointment with id " + id + " was not found.");
     }
 
-    public String delete(Long id) {
+    public String delete(Long id) throws BadRequestException{
         if(repository.findById(id).isPresent()){
             repository.deleteById(id);
             logger.info("Appointment was succesfully deleted");
-            return "Appointment with id"+ id + " was deleted. ";
+            return "Appointment with id "+ id + " was deleted. ";
         }
-        logger.error("Appointment was not found");
-        return "Appointment with id "+ id + " was not found. ";
+        logger.error("Appointment with id " + id + " was not found.");
+        throw new BadRequestException("Appointment with id " + id + " was not found.");
     }
 
-    public String updateAppointment(Appointment a){
+    public String updateAppointment(Appointment a) throws BadRequestException{
         Long id = a.getId();
 
         if(repository.findById(id).isPresent()) {
@@ -66,8 +70,8 @@ public class AppointmentService {
             return "Appointment with Id: " + id + " was modified.";
 
         } else {
-            logger.error("Appointment doesn't exist");
-            return "Appointment with Id " + id + " does not exist.";
+            logger.error("Appointment with id " + id + " doesn't exist");
+            throw new BadRequestException("Appointment with id " + id + " doesn't exist");
         }
     }
 }

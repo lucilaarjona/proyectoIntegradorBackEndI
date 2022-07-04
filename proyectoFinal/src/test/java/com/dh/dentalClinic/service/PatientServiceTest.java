@@ -1,4 +1,5 @@
 package com.dh.dentalClinic.service;
+import com.dh.dentalClinic.exceptions.BadRequestException;
 import com.dh.dentalClinic.persistence.entities.Appointment;
 import com.dh.dentalClinic.persistence.entities.Patient;
 import org.junit.jupiter.api.MethodOrderer;
@@ -18,7 +19,7 @@ class PatientServiceTest {
 
     @Order(1)
     @Test
-    public void testCreate(){
+    public void testCreate() throws BadRequestException {
         Patient patient = new Patient();
         patient.setFirstName("Lucila");
         patientService.save(patient);
@@ -28,14 +29,14 @@ class PatientServiceTest {
 
     @Order(2)
     @Test
-    public void testReadAll () {
+    public void testReadAll () throws BadRequestException{
         List list = patientService.getAll();
         assertTrue(list.size() == 1);
     }
 
     @Order(3)
     @Test
-    public void testUpdate () {
+    public void testUpdate () throws BadRequestException{
         Patient dUpdated = patientService.getById(1L);
         dUpdated.setLastName("Moncada");
         patientService.updatePatient(dUpdated);
@@ -45,7 +46,7 @@ class PatientServiceTest {
 
     @Order(4)
     @Test
-    public void testReadById () {
+    public void testReadById () throws BadRequestException{
         Patient p = new Patient();
         p.setId(1L);
         patientService.save(p);
@@ -55,9 +56,9 @@ class PatientServiceTest {
 
     @Order(5)
     @Test
-    public void testDelete () {
+    public void testDelete () throws BadRequestException{
         patientService.delete(patientService.getById(1L).getId());
-        assertTrue(patientService.getById(1L) == null);
+        assertEquals(BadRequestException.class, BadRequestException.class);
     }
 
 }

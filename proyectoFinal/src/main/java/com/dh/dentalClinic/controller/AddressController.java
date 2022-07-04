@@ -1,4 +1,5 @@
 package com.dh.dentalClinic.controller;
+import com.dh.dentalClinic.exceptions.BadRequestException;
 import com.dh.dentalClinic.persistence.entities.Address;
 import com.dh.dentalClinic.persistence.entities.Appointment;
 import com.dh.dentalClinic.service.AddressService;
@@ -18,7 +19,7 @@ public class AddressController {
     AddressService service;
 
     @PostMapping("")
-    public ResponseEntity<String> create(@RequestBody Address a) {
+    public ResponseEntity<String> create(@RequestBody Address a) throws BadRequestException {
         ResponseEntity<String> response = null;
 
         if(service.save(a) != null) {
@@ -30,22 +31,22 @@ public class AddressController {
     }
 
     @RequestMapping(value = "", method = RequestMethod.GET, produces = "application/json")
-    public List<Address> getAll() {
+    public List<Address> getAll() throws BadRequestException{
         return service.getAll();
     }
 
     @GetMapping("/{id}")
-    public Address getById(@PathVariable Long id) {
+    public Address getById(@PathVariable Long id) throws BadRequestException{
         return service.getById(id);
     }
 
     @DeleteMapping(value = "{id}")
-    public String delete(@PathVariable Long id) {
+    public String delete(@PathVariable Long id) throws BadRequestException{
         return service.delete(id);
     }
 
     @PutMapping("")
-    public String update(@RequestBody Address a){
+    public String update(@RequestBody Address a) throws BadRequestException{
         return service.updateAppointment(a);
     }
 

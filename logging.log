@@ -636,4 +636,64 @@
   2022-07-03 21:49:17 INFO  DentistService:27 - Searching all dentists...
   2022-07-03 21:49:21 INFO  DentistService:45 - Dentist was succesfully deleted
   2022-07-03 21:49:21 INFO  DentistService:27 - Searching all dentists...
+  2022-07-04 15:55:07 INFO  DentistService:21 - Dentist was succesfully saved
+  2022-07-04 15:55:22 INFO  DentistService:21 - Dentist was succesfully saved
+  2022-07-04 15:55:48 INFO  DentistService:29 - Searching all dentists...
+  2022-07-04 15:56:02 ERROR DentistService:54 - Dentist was not found
+  2022-07-04 15:56:14 INFO  DentistService:52 - Dentist was succesfully deleted
+  2022-07-04 15:57:32 ERROR DentistService:54 - Dentist was not found
+  2022-07-04 15:57:43 INFO  DentistService:52 - Dentist was succesfully deleted
+  2022-07-04 16:02:05 INFO  DentistService:21 - Dentist was succesfully saved
+  2022-07-04 16:02:09 INFO  DentistService:21 - Dentist was succesfully saved
+  2022-07-04 16:02:12 INFO  DentistService:29 - Searching all dentists...
+  2022-07-04 16:02:32 INFO  DentistService:40 - Looking for dentist with id:1
+  2022-07-04 16:02:35 INFO  DentistService:43 - Dentist was not found
+  2022-07-04 16:02:41 INFO  DentistService:40 - Looking for dentist with id:2
+  2022-07-04 16:02:55 INFO  DentistService:71 - Dentist 1 was succesfully modified.
+  2022-07-04 16:03:04 INFO  DentistService:40 - Looking for dentist with id:1
+  2022-07-04 16:03:22 ERROR DentistService:75 - Dentist with id 8 doesn't exist
+  2022-07-04 16:03:27 INFO  DentistService:71 - Dentist 1 was succesfully modified.
+  2022-07-04 16:03:32 INFO  DentistService:29 - Searching all dentists...
+  2022-07-04 16:03:38 INFO  DentistService:52 - Dentist was succesfully deleted
+  2022-07-04 16:03:41 ERROR DentistService:55 - Dentist was not found
+  2022-07-04 16:37:56 INFO  DentistService:21 - Dentist was succesfully saved
+  2022-07-04 16:38:11 INFO  AddressService:20 - Address was succesfully saved
+  2022-07-04 16:38:14 INFO  PatientService:20 - Patient was succesfully saved
+  2022-07-04 16:38:18 INFO  PatientService:29 - Searching all patients...
+  2022-07-04 16:38:29 INFO  PatientService:20 - Patient was succesfully saved
+  2022-07-04 16:38:31 INFO  PatientService:29 - Searching all patients...
+  2022-07-04 16:38:36 ERROR PatientService:42 - Patient was not found
+  2022-07-04 16:38:40 ERROR PatientService:42 - Patient was not found
+  2022-07-04 16:38:43 INFO  PatientService:39 - Looking for patient with id:3
+  2022-07-04 16:38:48 INFO  PatientService:39 - Looking for patient with id:4
+  2022-07-04 16:39:46 ERROR PatientService:74 - Patient doesn't exist
+  2022-07-04 16:40:00 INFO  PatientService:71 - Patient 3 was succesfully modified.
+  2022-07-04 16:40:10 INFO  PatientService:50 - Patient was succesfully deleted
+  2022-07-04 16:41:00 ERROR PatientService:53 - Patient was not found
+  2022-07-04 16:54:48 INFO  DentistService:30 - Searching all dentists...
+  2022-07-04 16:54:54 INFO  PatientService:29 - Searching all patients...
+  2022-07-04 16:55:13 INFO  DentistService:21 - Dentist was succesfully saved
+  2022-07-04 16:55:16 INFO  DentistService:30 - Searching all dentists...
+  2022-07-04 16:55:28 INFO  AddressService:21 - Address was succesfully saved
+  2022-07-04 16:55:30 INFO  PatientService:20 - Patient was succesfully saved
+  2022-07-04 16:55:35 INFO  PatientService:29 - Searching all patients...
+  2022-07-04 16:56:08 INFO  AppointmentService:21 - Appointment was succesfully saved
+  2022-07-04 16:56:12 INFO  AppointmentService:30 - Searching all appointments...
+  2022-07-04 16:56:32 INFO  AppointmentService:41 - Looking for appointments with id:1
+  2022-07-04 16:57:17 INFO  AppointmentService:69 - Appointment 1 was succesfully modified.
+  2022-07-04 16:57:25 ERROR AppointmentService:54 - Appointment was not found
+  2022-07-04 16:57:28 INFO  AppointmentService:51 - Appointment was succesfully deleted
+  2022-07-04 16:59:09 INFO  AppointmentService:44 - Appointment was not found
+  2022-07-04 16:59:13 INFO  AppointmentService:30 - Searching all appointments...
+  2022-07-04 17:25:19 INFO  AddressService:22 - Address was succesfully saved
+  2022-07-04 17:25:21 INFO  AddressService:31 - Searching all addresses...
+  2022-07-04 17:25:25 INFO  AddressService:42 - Looking for address with id:1
+  2022-07-04 17:25:29 INFO  AddressService:45 - Address was not found
+  2022-07-04 17:25:37 ERROR AddressService:55 - Address was not found
+  2022-07-04 17:25:41 INFO  AddressService:52 - Address was succesfully deleted
+  2022-07-04 17:25:49 INFO  AddressService:22 - Address was succesfully saved
+  2022-07-04 17:25:52 INFO  AddressService:31 - Searching all addresses...
+  2022-07-04 17:26:14 INFO  AddressService:71 - Address 2 was succesfully modified.
+  2022-07-04 17:26:27 ERROR AddressService:55 - Address was not found
+  2022-07-04 17:26:31 INFO  AddressService:52 - Address was succesfully deleted
   

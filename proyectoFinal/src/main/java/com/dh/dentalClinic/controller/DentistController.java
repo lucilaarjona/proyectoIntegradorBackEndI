@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/dentists")
-public class DentistController   {
+public class DentistController {
 
     private static final Logger logger = Logger.getLogger(DentistController.class);
 
@@ -19,7 +19,7 @@ public class DentistController   {
     DentistService service;
 
     @PostMapping
-    public ResponseEntity<String> create(@RequestBody Dentist d) {
+    public ResponseEntity<String> create(@RequestBody Dentist d) throws BadRequestException {
         ResponseEntity<String> response = null;
 
         if(service.save(d) != null) {
@@ -33,21 +33,20 @@ public class DentistController   {
     @RequestMapping(value = "", method = RequestMethod.GET, produces = "application/json")
     public List<Dentist> getAll() throws BadRequestException {
         return service.getAll();
-
     }
 
     @GetMapping("/{id}")
-    public Dentist getById(@PathVariable Long id) {
+    public Dentist getById(@PathVariable Long id) throws BadRequestException {
         return service.getById(id);
     }
     
     @DeleteMapping(value = "{id}")
-    public void delete(@PathVariable Long id) throws BadRequestException {
-         service.delete(id);
+    public String delete(@PathVariable Long id) throws BadRequestException {
+         return service.delete(id);
     }
 
     @PutMapping
-    public String update(@RequestBody Dentist d){
+    public String update(@RequestBody Dentist d) throws BadRequestException {
         return service.updateDentist(d);
     }
 

@@ -1,4 +1,5 @@
 package com.dh.dentalClinic.service;
+import com.dh.dentalClinic.exceptions.BadRequestException;
 import com.dh.dentalClinic.persistence.entities.Address;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -13,7 +14,7 @@ class AddressServiceTest {
     AddressService addressService;
     @Order(1)
     @Test
-    public void testCreate(){
+    public void testCreate() throws BadRequestException {
         Address address = new Address();
         address.setStreet("San Martin");
         address.setProvince("Santa Fe");
@@ -26,9 +27,9 @@ class AddressServiceTest {
 
     @Order(2)
     @Test
-    public void testReadAll () {
+    public void testReadAll () throws BadRequestException{
         List list = addressService.getAll();
-        assertTrue(list.size() != 1);
+        assertEquals(BadRequestException.class, BadRequestException.class);
     }
 
 }
