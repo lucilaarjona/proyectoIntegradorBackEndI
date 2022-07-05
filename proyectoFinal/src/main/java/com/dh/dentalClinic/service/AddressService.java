@@ -31,7 +31,8 @@ public class AddressService extends GlobalExceptions {
         if (repository.findAll().size()== 0) {
             throw new BadRequestException("There aren't any addresses created yet.");
         }
-        return repository.findAll();
+            return repository.findAll();
+
     }
 
     public Address getById(Long id) throws BadRequestException{

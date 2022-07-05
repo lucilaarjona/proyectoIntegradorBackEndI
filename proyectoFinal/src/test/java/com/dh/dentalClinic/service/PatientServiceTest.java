@@ -1,14 +1,10 @@
 package com.dh.dentalClinic.service;
 import com.dh.dentalClinic.exceptions.BadRequestException;
-import com.dh.dentalClinic.persistence.entities.Appointment;
 import com.dh.dentalClinic.persistence.entities.Patient;
 import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
@@ -23,41 +19,34 @@ class PatientServiceTest {
         Patient patient = new Patient();
         patient.setFirstName("Lucila");
         patientService.save(patient);
-        Patient patient1 = patientService.getById(1L);
-        assertTrue(patient1 != null);
+        assertNotNull(patientService.getById(1L));
     }
 
     @Order(2)
     @Test
     public void testReadAll () throws BadRequestException{
-        List list = patientService.getAll();
-        assertTrue(list.size() == 1);
+        assertTrue(patientService.getAll().size() == 1);
     }
 
     @Order(3)
     @Test
-    public void testUpdate () throws BadRequestException{
-        Patient dUpdated = patientService.getById(1L);
-        dUpdated.setLastName("Moncada");
-        patientService.updatePatient(dUpdated);
-        assertTrue(patientService.getById(1L).getFirstName() == "Lucila");
+    public void testUpdate () throws BadRequestException {
+        Patient pUpdated = patientService.getById(1L);
+        pUpdated.setLastName("Moncada");
+        patientService.updatePatient(pUpdated);
         assertTrue(patientService.getById(1L).getLastName() == "Moncada");
     }
 
     @Order(4)
     @Test
     public void testReadById () throws BadRequestException{
-        Patient p = new Patient();
-        p.setId(1L);
-        patientService.save(p);
-        Patient patient = patientService.getById(1L);
-        assertTrue(patient.getId() != null);
+        assertTrue(patientService.getById(1L).getId() != null);
     }
 
     @Order(5)
     @Test
     public void testDelete () throws BadRequestException{
-        patientService.delete(patientService.getById(1L).getId());
+        patientService.delete(1L);
         assertEquals(BadRequestException.class, BadRequestException.class);
     }
 

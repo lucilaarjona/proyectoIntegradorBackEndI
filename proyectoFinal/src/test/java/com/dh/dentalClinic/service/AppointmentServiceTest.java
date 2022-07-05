@@ -1,11 +1,7 @@
 package com.dh.dentalClinic.service;
 import com.dh.dentalClinic.exceptions.BadRequestException;
 import com.dh.dentalClinic.persistence.entities.Appointment;
-import com.dh.dentalClinic.persistence.entities.Dentist;
-import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import java.util.Date;
@@ -37,19 +33,13 @@ class AppointmentServiceTest {
         Appointment dUpdated = appointmentService.getById(1L);
         dUpdated.setDate(new Date(2000-02-02));
         appointmentService.updateAppointment(dUpdated);
-        Date date = dUpdated.getDate();
-        System.out.println(appointmentService.getById(1L).getDate());
         assertTrue(appointmentService.getById(1L).getDate() != null);
     }
 
     @Order(4)
     @Test
     public void testReadById () throws BadRequestException{
-        Appointment a = new Appointment();
-        a.setId(1L);
-        appointmentService.save(a);
-        Appointment app = appointmentService.getById(1L);
-        assertTrue(app.getId() != null);
+        assertTrue(appointmentService.getById(1L).getId() != null);
     }
 
     @Order(5)
