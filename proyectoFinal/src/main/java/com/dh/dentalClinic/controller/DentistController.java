@@ -1,7 +1,6 @@
 package com.dh.dentalClinic.controller;
 import com.dh.dentalClinic.exceptions.BadRequestException;
 import com.dh.dentalClinic.persistence.entities.Dentist;
-import com.dh.dentalClinic.service.AddressService;
 import com.dh.dentalClinic.service.DentistService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +12,6 @@ import java.util.List;
 @RequestMapping("/dentists")
 public class DentistController {
 
-    private static final Logger logger = Logger.getLogger(DentistController.class);
 
     @Autowired
     DentistService service;

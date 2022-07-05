@@ -2,7 +2,6 @@ package com.dh.dentalClinic.service;
 import com.dh.dentalClinic.exceptions.BadRequestException;
 import com.dh.dentalClinic.exceptions.GlobalExceptions;
 import com.dh.dentalClinic.persistence.entities.Address;
-import com.dh.dentalClinic.persistence.entities.Appointment;
 import com.dh.dentalClinic.persistence.repository.AddressRepository;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
