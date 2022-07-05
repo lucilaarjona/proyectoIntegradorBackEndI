@@ -15,14 +15,9 @@ public class AppointmentService {
     @Autowired
     AppointmentsRepository repository;
 
-    public String save (Appointment a) throws BadRequestException {
-        if (repository.save(a)!=null){
-            logger.info("Appointment was succesfully saved");
-            return "New appointment succesfully saved";
-        }else{
-            logger.error("There was something wrong...");
-            throw new BadRequestException("There was something wrong...");
-        }
+    public Appointment save (Appointment a) throws BadRequestException {
+        logger.info("Appointment was succesfully saved");
+        return repository.save(a);
     }
 
     public List<Appointment> getAll() throws BadRequestException{

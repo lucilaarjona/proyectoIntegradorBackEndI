@@ -753,4 +753,50 @@
   2022-07-04 21:07:57 INFO  DentistService:30 - Searching all dentists...
   2022-07-04 21:07:57 INFO  DentistService:30 - Searching all dentists...
   2022-07-04 21:07:57 INFO  DentistService:30 - Searching all dentists...
+  2022-07-04 23:07:14 INFO  AddressService:21 - Address was succesfully saved
+  2022-07-04 23:07:18 INFO  AddressService:30 - Searching all addresses...
+  2022-07-04 23:08:37 INFO  AddressService:21 - Address was succesfully saved
+  2022-07-04 23:08:47 INFO  AddressService:21 - Address was succesfully saved
+  2022-07-04 23:09:01 INFO  AddressService:21 - Address was succesfully saved
+  2022-07-04 23:09:03 INFO  AddressService:30 - Searching all addresses...
+  2022-07-04 23:11:20 INFO  AddressService:21 - Address was succesfully saved
+  2022-07-04 23:21:33 INFO  DentistService:21 - Dentist was succesfully saved
+  2022-07-04 23:21:45 INFO  AppointmentService:19 - Appointment was succesfully saved
+  2022-07-04 23:21:58 INFO  AppointmentService:19 - Appointment was succesfully saved
+  2022-07-04 23:22:26 INFO  PatientService:21 - Patient was succesfully saved
+  2022-07-04 23:22:30 INFO  AppointmentService:19 - Appointment was succesfully saved
+  2022-07-04 23:23:09 INFO  DentistService:21 - Dentist was succesfully saved
+  2022-07-04 23:23:29 INFO  PatientService:21 - Patient was succesfully saved
+  2022-07-04 23:23:35 INFO  AppointmentService:19 - Appointment was succesfully saved
+  2022-07-04 23:24:30 INFO  AppointmentService:19 - Appointment was succesfully saved
+  2022-07-04 23:25:42 INFO  DentistService:21 - Dentist was succesfully saved
+  2022-07-04 23:25:49 INFO  PatientService:21 - Patient was succesfully saved
+  2022-07-04 23:26:00 INFO  AppointmentService:19 - Appointment was succesfully saved
+  2022-07-04 23:26:06 INFO  AppointmentService:24 - Searching all appointments...
+  2022-07-04 23:27:24 INFO  DentistService:21 - Dentist was succesfully saved
+  2022-07-04 23:27:30 INFO  PatientService:21 - Patient was succesfully saved
+  2022-07-04 23:27:34 INFO  AppointmentService:19 - Appointment was succesfully saved
+  2022-07-04 23:27:48 INFO  AppointmentService:19 - Appointment was succesfully saved
+  2022-07-04 23:27:53 INFO  AppointmentService:24 - Searching all appointments...
+  2022-07-04 23:29:54 INFO  DentistService:21 - Dentist was succesfully saved
+  2022-07-04 23:29:56 INFO  DentistService:30 - Searching all dentists...
+  2022-07-04 23:30:04 INFO  AddressService:24 - Searching all addresses...
+  2022-07-04 23:32:23 INFO  DentistService:21 - Dentist was succesfully saved
+  2022-07-04 23:32:27 INFO  DentistService:30 - Searching all dentists...
+  2022-07-04 23:32:32 INFO  DentistService:41 - Looking for dentist with id:1
+  2022-07-04 23:32:36 INFO  DentistService:72 - Dentist 1 was succesfully modified.
+  2022-07-04 23:32:40 INFO  DentistService:30 - Searching all dentists...
+  2022-07-04 23:32:47 INFO  AddressService:24 - Searching all addresses...
+  2022-07-04 23:32:53 INFO  AddressService:39 - Address with id 2 was not found.
+  2022-07-04 23:32:57 INFO  AddressService:36 - Looking for address with id:1
+  2022-07-04 23:33:07 INFO  AddressService:65 - Address 1 was succesfully modified.
+  2022-07-04 23:33:17 INFO  PatientService:21 - Patient was succesfully saved
+  2022-07-04 23:33:26 INFO  PatientService:30 - Searching all patients...
+  2022-07-04 23:33:33 INFO  PatientService:40 - Looking for patient with id:1
+  2022-07-04 23:33:40 ERROR PatientService:75 - Patient doesn't exist
+  2022-07-04 23:33:46 INFO  PatientService:72 - Patient 1 was succesfully modified.
+  2022-07-04 23:33:53 INFO  PatientService:51 - Patient was succesfully deleted
+  2022-07-04 23:33:56 ERROR AddressService:49 - Address with id 2 was not found.
+  2022-07-04 23:33:59 INFO  AddressService:46 - Address was succesfully deleted
+  2022-07-04 23:34:03 INFO  DentistService:53 - Dentist was succesfully deleted
   

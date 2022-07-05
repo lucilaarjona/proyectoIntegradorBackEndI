@@ -3,7 +3,6 @@ import com.dh.dentalClinic.exceptions.BadRequestException;
 import com.dh.dentalClinic.persistence.entities.Address;
 import com.dh.dentalClinic.service.AddressService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -15,19 +14,12 @@ public class AddressController {
     @Autowired
     AddressService service;
 
-    @PostMapping("")
-    public ResponseEntity<String> create(@RequestBody Address a) throws BadRequestException {
-        ResponseEntity<String> response = null;
-
-        if(service.save(a) != null) {
-            response = ResponseEntity.ok("Address created.");
-        } else {
-            response = ResponseEntity.internalServerError().body("Oops");
-        }
-        return response;
+    @PostMapping
+    public Address create(@RequestBody Address a) throws BadRequestException {
+        return service.save(a);
     }
 
-    @RequestMapping(value = "", method = RequestMethod.GET, produces = "application/json")
+    @GetMapping
     public List<Address> getAll() throws BadRequestException{
         return service.getAll();
     }
@@ -42,7 +34,7 @@ public class AddressController {
         return service.delete(id);
     }
 
-    @PutMapping("")
+    @PutMapping
     public String update(@RequestBody Address a) throws BadRequestException{
         return service.updateAppointment(a);
     }

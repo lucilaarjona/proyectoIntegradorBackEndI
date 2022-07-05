@@ -5,7 +5,6 @@ import com.dh.dentalClinic.service.AppointmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -16,7 +15,7 @@ public class AppointmentController {
     @Autowired
     AppointmentService service;
 
-    @PostMapping("")
+    @PostMapping
     public ResponseEntity<String> create(@RequestBody Appointment a) throws BadRequestException {
         ResponseEntity<String> response = null;
 
@@ -28,7 +27,7 @@ public class AppointmentController {
         return response;
     }
 
-    @RequestMapping(value = "", method = RequestMethod.GET, produces = "application/json")
+    @GetMapping
     public List<Appointment> getAll() throws BadRequestException{
         return service.getAll();
     }
@@ -45,7 +44,7 @@ public class AppointmentController {
         return service.delete(id);
     }
 
-    @PutMapping("")
+    @PutMapping
     public String update(@RequestBody Appointment a) throws BadRequestException{
         return service.updateAppointment(a);
     }

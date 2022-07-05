@@ -27,7 +27,7 @@ public class PatientController {
         return response;
     }
 
-    @RequestMapping(value = "", method = RequestMethod.GET, produces = "application/json")
+    @GetMapping
     public List<Patient> getAll() throws BadRequestException{
         return service.getAll();
     }

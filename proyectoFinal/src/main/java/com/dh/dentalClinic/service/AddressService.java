@@ -16,14 +16,8 @@ public class AddressService extends GlobalExceptions {
     @Autowired
     AddressRepository repository;
 
-    public String save(Address a) throws BadRequestException {
-        if (repository.save(a)!= null){
-            logger.info("Address was succesfully saved");
-            return "OK";
-        }else{
-            logger.error("There was something wrong...");
-            throw new BadRequestException("There was something wrong...");
-        }
+    public Address save(Address a) throws BadRequestException {
+        return repository.save(a);
     }
 
     public List<Address> getAll() throws BadRequestException{
