@@ -18,10 +18,10 @@ public class DentistService extends GlobalExceptions {
 
     public String save(Dentist d) throws BadRequestException{
         if (repository.save(d)!= null){
-            logger.info("Dentist was succesfully saved");
-            return "New dentist succesfully saved";
+            logger.info("Dentist was successfully saved");
+            return "New dentist successfully saved";
         }else {
-            logger.error("There was something wrong...");
+            logger.error(new BadRequestException("There was something wrong..."));
             throw new BadRequestException("There was something wrong...");
         }
     }
@@ -29,8 +29,10 @@ public class DentistService extends GlobalExceptions {
     public List<Dentist> getAll() throws BadRequestException{
         logger.info("Searching all dentists...");
         if (repository.findAll().size()== 0) {
+            logger.error(new BadRequestException("Looking for a non existent list of dentists."));
             throw new BadRequestException("There aren't any dentists created yet.");
         }
+        logger.info("Search completed.");
         return repository.findAll();
     }
 
@@ -38,23 +40,22 @@ public class DentistService extends GlobalExceptions {
 
         if(repository.existsById(id)){
             Dentist dentist = repository.findById(id).get();
-            logger.info("Looking for dentist with id:" + id);
+            logger.info("Looking for dentist with id: " + id);
             return dentist;
         }
-        logger.info("Dentist with id " + id + " was not found.");
-        throw new BadRequestException("Dentist with id " + id + " was not found.");
-
+        logger.error(new BadRequestException("Dentist with id: " + id + " doesn't exist."));
+        throw new BadRequestException("Dentist with id: " + id + " doesn't exist.");
     }
 
         public String delete(Long id) throws BadRequestException {
 
         if(repository.findById(id).isPresent()){
             repository.deleteById(id);
-            logger.info("Dentist was succesfully deleted");
-            return "Dentist was succesfully deleted";
+            logger.info("Dentist with id: " + id + " was deleted.");
+            return "Dentist with id: " + id + " was deleted.";
         }else{
-        logger.error("Dentist with id " + id + " was not found.");
-        throw new BadRequestException("Dentist with id " + id + " was not found.");
+        logger.error(new BadRequestException("Dentist with id: " + id + " doesn't exist."));
+        throw new BadRequestException("Dentist with id: " + id + " doesn't exist.");
         }
     }
 
@@ -69,12 +70,11 @@ public class DentistService extends GlobalExceptions {
             modifiedD.setPatients(d.getPatients());
 
             repository.save(modifiedD);
-            logger.info("Dentist " + id +" was succesfully modified.");
-            return "Dentist with Id: " + id + " was modified.";
-
+            logger.info("Dentist with id: " + id +" was successfully modified.");
+            return "Dentist with id: " + id + " was modified.";
         } else {
-            logger.error("Dentist with id " + id + " doesn't exist");
-            throw new BadRequestException("Dentist with id " + id + " doesn't exist");
+            logger.error(new BadRequestException("Dentist with id: " + id + " doesn't exist"));
+            throw new BadRequestException("Dentist with id: " + id + " doesn't exist");
         }
     }
 }

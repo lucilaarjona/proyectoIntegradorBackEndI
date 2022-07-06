@@ -802,4 +802,116 @@
   2022-07-05 23:08:34 INFO  DentistService:30 - Searching all dentists...
   2022-07-05 23:24:07 INFO  DentistService:30 - Searching all dentists...
   2022-07-06 13:39:14 INFO  DentistService:30 - Searching all dentists...
+  2022-07-06 15:33:56 INFO  DentistService:21 - Dentist was succesfully saved
+  2022-07-06 15:34:02 INFO  PatientService:21 - Patient was succesfully saved
+  2022-07-06 15:34:09 INFO  DentistService:30 - Searching all dentists...
+  2022-07-06 15:34:12 INFO  AddressService:24 - Searching all addresses...
+  2022-07-06 15:34:16 INFO  PatientService:30 - Searching all patients...
+  2022-07-06 15:34:26 INFO  AppointmentService:19 - Appointment was succesfully saved
+  2022-07-06 15:34:33 INFO  AppointmentService:35 - Looking for appointments with id:1
+  2022-07-06 15:34:36 INFO  AppointmentService:35 - Looking for appointments with id:1
+  2022-07-06 15:34:43 ERROR AppointmentService:38 - com.dh.dentalClinic.exceptions.BadRequestException: Appointment with id2was not found.
+  2022-07-06 16:38:52 INFO  DentistService:21 - Dentist was successfully saved
+  2022-07-06 16:39:18 INFO  DentistService:30 - Searching all dentists...
+  2022-07-06 16:39:18 INFO  DentistService:35 - Search completed.
+  2022-07-06 16:39:37 INFO  DentistService:43 - Looking for dentist with id:1
+  2022-07-06 16:40:01 ERROR DentistService:46 - com.dh.dentalClinic.exceptions.BadRequestException: Dentist with id 2 doesn't exist.
+  2022-07-06 16:40:30 INFO  DentistService:73 - com.dh.dentalClinic.exceptions.BadRequestException: Dentist with id: 1 was successfully modified.
+  2022-07-06 16:47:19 INFO  DentistService:30 - Searching all dentists...
+  2022-07-06 16:47:20 ERROR DentistService:32 - com.dh.dentalClinic.exceptions.BadRequestException: Looking for a non existent list of dentists.
+  2022-07-06 16:47:37 ERROR DentistService:46 - com.dh.dentalClinic.exceptions.BadRequestException: Dentist with id 2 doesn't exist.
+  2022-07-06 17:05:03 INFO  DentistService:21 - Dentist was successfully saved
+  2022-07-06 17:05:16 INFO  DentistService:21 - Dentist was successfully saved
+  2022-07-06 17:06:32 INFO  DentistService:21 - Dentist was successfully saved
+  2022-07-06 17:06:34 INFO  DentistService:30 - Searching all dentists...
+  2022-07-06 17:06:35 INFO  DentistService:35 - Search completed.
+  2022-07-06 17:08:21 INFO  DentistService:30 - Searching all dentists...
+  2022-07-06 17:08:21 INFO  DentistService:35 - Search completed.
+  2022-07-06 17:08:48 INFO  DentistService:30 - Searching all dentists...
+  2022-07-06 17:08:48 INFO  DentistService:35 - Search completed.
+  2022-07-06 17:08:52 ERROR DentistService:46 - com.dh.dentalClinic.exceptions.BadRequestException: Dentist with id: 2 doesn't exist.
+  2022-07-06 17:08:55 INFO  DentistService:43 - Looking for dentist with id: 1
+  2022-07-06 17:08:57 INFO  DentistService:73 - Dentist with id: 1 was successfully modified.
+  2022-07-06 17:09:02 INFO  DentistService:54 - Dentist with id: 1 was deleted.
+  2022-07-06 17:14:16 INFO  DentistService:21 - Dentist was successfully saved
+  2022-07-06 17:14:18 INFO  DentistService:30 - Searching all dentists...
+  2022-07-06 17:14:19 INFO  DentistService:35 - Search completed.
+  2022-07-06 17:14:23 INFO  DentistService:54 - Dentist with id: 1 was deleted.
+  2022-07-06 17:22:01 INFO  DentistService:30 - Searching all dentists...
+  2022-07-06 17:22:01 ERROR DentistService:32 - com.dh.dentalClinic.exceptions.BadRequestException: Looking for a non existent list of dentists.
+  2022-07-06 17:22:23 ERROR DentistService:76 - com.dh.dentalClinic.exceptions.BadRequestException: Dentist with id: 1 doesn't exist
+  2022-07-06 17:22:23 INFO  DentistService:30 - Searching all dentists...
+  2022-07-06 17:22:23 ERROR DentistService:32 - com.dh.dentalClinic.exceptions.BadRequestException: Looking for a non existent list of dentists.
+  2022-07-06 17:22:36 INFO  DentistService:21 - Dentist was successfully saved
+  2022-07-06 17:22:36 INFO  DentistService:30 - Searching all dentists...
+  2022-07-06 17:22:36 INFO  DentistService:35 - Search completed.
+  2022-07-06 17:24:13 INFO  DentistService:30 - Searching all dentists...
+  2022-07-06 17:24:13 INFO  DentistService:35 - Search completed.
+  2022-07-06 17:24:24 ERROR DentistService:76 - com.dh.dentalClinic.exceptions.BadRequestException: Dentist with id: 1 doesn't exist
+  2022-07-06 17:24:24 INFO  DentistService:30 - Searching all dentists...
+  2022-07-06 17:24:24 INFO  DentistService:35 - Search completed.
+  2022-07-06 17:25:10 INFO  DentistService:21 - Dentist was successfully saved
+  2022-07-06 17:25:10 INFO  DentistService:30 - Searching all dentists...
+  2022-07-06 17:25:10 INFO  DentistService:35 - Search completed.
+  2022-07-06 18:16:34 INFO  DentistService:21 - Dentist was successfully saved
+  2022-07-06 18:16:37 INFO  AddressService:20 - Address was successfully saved
+  2022-07-06 18:16:44 INFO  AppointmentService:19 - Appointment was successfully saved
+  2022-07-06 18:17:10 INFO  AddressService:25 - Searching all addresses...
+  2022-07-06 18:17:10 INFO  AddressService:30 - Search completed.
+  2022-07-06 18:17:28 INFO  DentistService:21 - Dentist was successfully saved
+  2022-07-06 18:19:29 INFO  DentistService:30 - Searching all dentists...
+  2022-07-06 18:19:29 INFO  DentistService:35 - Search completed.
+  2022-07-06 18:20:01 INFO  DentistService:54 - Dentist with id: 1 was deleted.
+  2022-07-06 18:20:35 ERROR DentistService:46 - com.dh.dentalClinic.exceptions.BadRequestException: Dentist with id: 1 doesn't exist.
+  2022-07-06 18:21:42 INFO  DentistService:30 - Searching all dentists...
+  2022-07-06 18:21:42 INFO  DentistService:35 - Search completed.
+  2022-07-06 18:22:39 INFO  DentistService:30 - Searching all dentists...
+  2022-07-06 18:22:39 INFO  DentistService:35 - Search completed.
+  2022-07-06 18:23:04 INFO  DentistService:30 - Searching all dentists...
+  2022-07-06 18:23:04 INFO  DentistService:35 - Search completed.
+  2022-07-06 18:23:19 INFO  DentistService:30 - Searching all dentists...
+  2022-07-06 18:23:19 INFO  DentistService:35 - Search completed.
+  2022-07-06 18:23:29 INFO  DentistService:30 - Searching all dentists...
+  2022-07-06 18:23:29 INFO  DentistService:35 - Search completed.
+  2022-07-06 18:24:13 INFO  DentistService:30 - Searching all dentists...
+  2022-07-06 18:24:13 INFO  DentistService:35 - Search completed.
+  2022-07-06 18:42:55 INFO  DentistService:21 - Dentist was successfully saved
+  2022-07-06 18:43:57 INFO  DentistService:30 - Searching all dentists...
+  2022-07-06 18:43:58 INFO  DentistService:35 - Search completed.
+  2022-07-06 18:44:12 INFO  DentistService:43 - Looking for dentist with id: 1
+  2022-07-06 18:44:57 INFO  DentistService:73 - Dentist with id: 1 was successfully modified.
+  2022-07-06 18:45:07 ERROR DentistService:57 - com.dh.dentalClinic.exceptions.BadRequestException: Dentist with id: 3 doesn't exist.
+  2022-07-06 18:45:11 INFO  DentistService:54 - Dentist with id: 1 was deleted.
+  2022-07-06 18:45:15 INFO  DentistService:21 - Dentist was successfully saved
+  2022-07-06 18:45:18 INFO  DentistService:30 - Searching all dentists...
+  2022-07-06 18:45:18 INFO  DentistService:35 - Search completed.
+  2022-07-06 18:45:23 INFO  DentistService:21 - Dentist was successfully saved
+  2022-07-06 18:45:25 INFO  DentistService:30 - Searching all dentists...
+  2022-07-06 18:45:25 INFO  DentistService:35 - Search completed.
+  2022-07-06 18:45:39 INFO  AddressService:20 - Address was successfully saved
+  2022-07-06 18:46:08 INFO  AddressService:25 - Searching all addresses...
+  2022-07-06 18:46:08 INFO  AddressService:30 - Search completed.
+  2022-07-06 18:46:17 INFO  AddressService:39 - Looking for address with id: 1
+  2022-07-06 18:46:39 INFO  AddressService:68 - Address with id: 1 was modified.
+  2022-07-06 18:46:52 INFO  AddressService:49 - Address was successfully deleted
+  2022-07-06 18:46:55 INFO  AddressService:20 - Address was successfully saved
+  2022-07-06 18:46:58 INFO  AddressService:25 - Searching all addresses...
+  2022-07-06 18:46:58 INFO  AddressService:30 - Search completed.
+  2022-07-06 18:47:18 INFO  PatientService:21 - Patient was successfully saved
+  2022-07-06 18:47:37 INFO  PatientService:30 - Searching all patients...
+  2022-07-06 18:47:37 INFO  PatientService:35 - Search completed.
+  2022-07-06 18:47:55 INFO  PatientService:42 - Looking for patient with id: 1
+  2022-07-06 18:48:25 INFO  PatientService:74 - Patient with id: 1 was successfully modified.
+  2022-07-06 18:48:31 INFO  PatientService:30 - Searching all patients...
+  2022-07-06 18:48:31 INFO  PatientService:35 - Search completed.
+  2022-07-06 18:48:48 INFO  PatientService:53 - Patient with id: 1 was deleted.
+  2022-07-06 18:48:51 INFO  PatientService:21 - Patient was successfully saved
+  2022-07-06 18:48:54 INFO  PatientService:30 - Searching all patients...
+  2022-07-06 18:48:54 INFO  PatientService:35 - Search completed.
+  2022-07-06 18:49:09 INFO  AppointmentService:19 - Appointment was successfully saved
+  2022-07-06 18:49:25 INFO  AppointmentService:24 - Searching all appointments...
+  2022-07-06 18:49:25 INFO  AppointmentService:29 - Search completed.
+  2022-07-06 18:49:44 INFO  AppointmentService:37 - Looking for appointments with id: 1
+  2022-07-06 18:50:16 INFO  AppointmentService:65 - Appointment with id: 1 was successfully modified.
+  2022-07-06 18:50:43 INFO  AppointmentService:47 - Appointment was successfully deleted
   

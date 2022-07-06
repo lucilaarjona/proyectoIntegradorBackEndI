@@ -2,6 +2,7 @@ package com.dh.dentalClinic.controller;
 import com.dh.dentalClinic.exceptions.BadRequestException;
 import com.dh.dentalClinic.persistence.entities.Patient;
 import com.dh.dentalClinic.service.PatientService;
+import com.dh.dentalClinic.user.utils.JWTUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,12 +12,15 @@ import java.util.List;
 @RequestMapping("/patients")
 public class PatientController {
 
+    @Autowired
+    private JWTUtil jwtUtil;
 
     @Autowired
     PatientService service;
 
     @PostMapping
-    public ResponseEntity<String> create(@RequestBody Patient p) throws BadRequestException{
+    public ResponseEntity<String> create(@RequestHeader(value = "Authorization") String token, @RequestBody Patient p) throws BadRequestException{
+        if (!validarToken(token)) { return null; }
         ResponseEntity<String> response = null;
 
         if(service.save(p) != null) {
@@ -28,23 +32,32 @@ public class PatientController {
     }
 
     @GetMapping
-    public List<Patient> getAll() throws BadRequestException{
+    public List<Patient> getAll(@RequestHeader(value = "Authorization") String token) throws BadRequestException{
+        if (!validarToken(token)) { return null; }
         return service.getAll();
     }
 
     @GetMapping("/{id}")
-    public Patient getById(@PathVariable Long id) throws BadRequestException {
+    public Patient getById(@RequestHeader(value = "Authorization") String token, @PathVariable Long id) throws BadRequestException {
+        if (!validarToken(token)) { return null; }
         return service.getById(id);
     }
 
     @DeleteMapping(value = "{id}")
-    public String delete(@PathVariable Long id) throws BadRequestException{
+    public String delete(@RequestHeader(value = "Authorization") String token, @PathVariable Long id) throws BadRequestException{
+        if (!validarToken(token)) { return null; }
         return service.delete(id);
     }
 
     @PutMapping
-    public String update(@RequestBody Patient p) throws BadRequestException{
+    public String update(@RequestHeader(value = "Authorization") String token, @RequestBody Patient p) throws BadRequestException{
+        if (!validarToken(token)) { return null; }
         return service.updatePatient(p);
+    }
+
+    private boolean validarToken(String token) {
+        String usuarioId = jwtUtil.getKey(token);
+        return usuarioId != null;
     }
 
 }

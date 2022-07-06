@@ -19,8 +19,9 @@ public class DentistController {
     DentistService service;
 
     @PostMapping
-    public ResponseEntity<String> create(@RequestBody Dentist d) throws BadRequestException {
+    public ResponseEntity<String> create(@RequestHeader(value = "Authorization") String token ,@RequestBody Dentist d) throws BadRequestException {
         ResponseEntity<String> response = null;
+        if (!validarToken(token)) { return null; }
 
         if(service.save(d) != null) {
             response = ResponseEntity.ok("Dentist created.");
@@ -31,12 +32,14 @@ public class DentistController {
     }
 
     @GetMapping()
-    public List<Dentist> getAll() throws BadRequestException {
+    public List<Dentist> getAll(@RequestHeader(value = "Authorization") String token) throws BadRequestException {
+        if (!validarToken(token)) { return null; }
         return service.getAll();
     }
 
     @GetMapping("/{id}")
-    public Dentist getById(@PathVariable Long id) throws BadRequestException {
+    public Dentist getById(@RequestHeader(value = "Authorization") String token, @PathVariable Long id) throws BadRequestException {
+        if (!validarToken(token)) { return null; }
         return service.getById(id);
     }
     
@@ -45,15 +48,16 @@ public class DentistController {
          if (!validarToken(token)) { return null; }
          return service.delete(id);
     }
+
+    @PutMapping
+    public String update(@RequestHeader(value = "Authorization") String token, @RequestBody Dentist d) throws BadRequestException {
+        if (!validarToken(token)) { return null; }
+        return service.updateDentist(d);
+    }
+
+
     private boolean validarToken(String token) {
         String usuarioId = jwtUtil.getKey(token);
         return usuarioId != null;
     }
-
-
-    @PutMapping
-    public String update(@RequestBody Dentist d) throws BadRequestException {
-        return service.updateDentist(d);
-    }
-
 }

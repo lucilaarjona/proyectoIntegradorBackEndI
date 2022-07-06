@@ -16,15 +16,17 @@ public class AppointmentService {
     AppointmentsRepository repository;
 
     public Appointment save (Appointment a) throws BadRequestException {
-        logger.info("Appointment was succesfully saved");
+        logger.info("Appointment was successfully saved");
         return repository.save(a);
     }
 
     public List<Appointment> getAll() throws BadRequestException{
         logger.info("Searching all appointments...");
         if (repository.findAll().size() == 0) {
+            logger.error(new BadRequestException("Looking for a non existent list of appointments."));
             throw new BadRequestException("There aren't any appointments created yet.");
         }
+        logger.info("Search completed.");
         return repository.findAll();
     }
 
@@ -32,21 +34,21 @@ public class AppointmentService {
 
         if(repository.existsById(id)){
             Appointment appointment = repository.findById(id).get();
-            logger.info("Looking for appointments with id:" + id);
+            logger.info("Looking for appointments with id: " + id);
             return appointment;
         }
-        logger.info("Appointment with id " + id + " was not found.");
-        throw new BadRequestException("Appointment with id " + id + " was not found.");
+        logger.error(new BadRequestException("Appointment with id: " + id + " doesn't exist."));
+        throw new BadRequestException("Appointment with id: " + id + " doesn't exist.");
     }
 
     public String delete(Long id) throws BadRequestException{
         if(repository.findById(id).isPresent()){
             repository.deleteById(id);
-            logger.info("Appointment was succesfully deleted");
+            logger.info("Appointment was successfully deleted");
             return "Appointment with id "+ id + " was deleted. ";
         }
-        logger.error("Appointment with id " + id + " was not found.");
-        throw new BadRequestException("Appointment with id " + id + " was not found.");
+        logger.error(new BadRequestException("Appointment with id: " + id + " doesn't exist."));
+        throw new BadRequestException("Appointment with id: " + id + " doesn't exist.");
     }
 
     public String updateAppointment(Appointment a) throws BadRequestException{
@@ -60,12 +62,12 @@ public class AppointmentService {
             modifiedA.setDate(a.getDate());
 
             repository.save(modifiedA);
-            logger.info("Appointment " + id +" was succesfully modified.");
-            return "Appointment with Id: " + id + " was modified.";
+            logger.info("Appointment with id: " + id +" was successfully modified.");
+            return "Appointment with id: " + id + " was modified.";
 
         } else {
-            logger.error("Appointment with id " + id + " doesn't exist");
-            throw new BadRequestException("Appointment with id " + id + " doesn't exist");
+            logger.error(new BadRequestException("Appointment with id: " + id + " doesn't exist"));
+            throw new BadRequestException("Appointment with id: " + id + " doesn't exist");
         }
     }
 }

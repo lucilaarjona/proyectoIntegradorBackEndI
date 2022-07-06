@@ -18,10 +18,10 @@ public class PatientService extends GlobalExceptions {
 
     public String save (Patient p) throws BadRequestException {
         if (repository.save(p)!= null){
-            logger.info("Patient was succesfully saved");
-            return "New patient succesfully saved";
+            logger.info("Patient was successfully saved");
+            return "New patient successfully saved";
         } else {
-            logger.error("There was something wrong...");
+            logger.error(new BadRequestException("There was something wrong..."));
             throw new BadRequestException("There was something wrong...");
         }
     }
@@ -29,30 +29,32 @@ public class PatientService extends GlobalExceptions {
     public List<Patient> getAll() throws BadRequestException{
         logger.info("Searching all patients...");
         if (repository.findAll().size()== 0) {
+            logger.error(new BadRequestException("Looking for a non existent list of patients."));
             throw new BadRequestException("There aren't any patients created yet.");
         }
+        logger.info("Search completed.");
         return repository.findAll();
     }
 
     public Patient getById(Long id) throws BadRequestException{
         if(repository.existsById(id)){
             Patient patient = repository.findById(id).get();
-            logger.info("Looking for patient with id:" + id);
+            logger.info("Looking for patient with id: " + id);
             return patient;
         }
-        logger.error("Patient id: " + id + " was not found.");
-        throw new BadRequestException("Patient id: " + id + " was not found.");
+        logger.error(new BadRequestException("Patient  with id: " + id + " doesn't exist."));
+        throw new BadRequestException("Patient id: " + id + " doesn't exist.");
     }
 
     public String delete(Long id) throws BadRequestException{
         if(repository.findById(id).isPresent()){
             repository.deleteById(id);
 
-            logger.info("Patient was succesfully deleted");
-            return "Patient id: " + id + " was deleted.";
+            logger.info("Patient with id: " + id + " was deleted.");
+            return "Patient with id: " + id + " was deleted.";
         }
-        logger.error("Patient id: " + id + " was not found.");
-        throw new BadRequestException("Patient id: " + id + " was not found.");
+        logger.error(new BadRequestException("Patient with id: " + id + " doesn't exist."));
+        throw new BadRequestException("Patient id: " + id + " doesn't exist.");
     }
 
     public String updatePatient(Patient p) throws BadRequestException{
@@ -69,11 +71,11 @@ public class PatientService extends GlobalExceptions {
 
             repository.save(modifiedP);
 
-            logger.info("Patient " + id +" was succesfully modified.");
-            return "Patient with Id: " + id + " was modified.";
+            logger.info("Patient with id: " + id +" was successfully modified.");
+            return "Patient with id: " + id + " was modified.";
         } else {
-            logger.error("Patient doesn't exist");
-            throw new BadRequestException("Patient with id " + id + " doesn't exist");
+            logger.error(new BadRequestException("Patient with id: " + id + " doesn't exist"));;
+            throw new BadRequestException("Patient with id:" + id + " doesn't exist");
         }
     }
 }
