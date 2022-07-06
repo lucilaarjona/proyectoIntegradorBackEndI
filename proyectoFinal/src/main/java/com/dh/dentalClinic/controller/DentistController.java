@@ -2,6 +2,8 @@ package com.dh.dentalClinic.controller;
 import com.dh.dentalClinic.exceptions.BadRequestException;
 import com.dh.dentalClinic.persistence.entities.Dentist;
 import com.dh.dentalClinic.service.DentistService;
+import com.dh.dentalClinic.user.controllers.UsuarioController;
+import com.dh.dentalClinic.user.utils.JWTUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,7 +12,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/dentists")
 public class DentistController {
-
+    @Autowired
+    private JWTUtil jwtUtil;
 
     @Autowired
     DentistService service;
@@ -38,9 +41,15 @@ public class DentistController {
     }
     
     @DeleteMapping(value = "{id}")
-    public String delete(@PathVariable Long id) throws BadRequestException {
+    public String delete(@RequestHeader(value = "Authorization") String token, @PathVariable Long id) throws BadRequestException {
+         if (!validarToken(token)) { return null; }
          return service.delete(id);
     }
+    private boolean validarToken(String token) {
+        String usuarioId = jwtUtil.getKey(token);
+        return usuarioId != null;
+    }
+
 
     @PutMapping
     public String update(@RequestBody Dentist d) throws BadRequestException {
