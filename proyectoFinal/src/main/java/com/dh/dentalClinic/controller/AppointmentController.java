@@ -2,7 +2,6 @@ package com.dh.dentalClinic.controller;
 import com.dh.dentalClinic.exceptions.BadRequestException;
 import com.dh.dentalClinic.persistence.entities.Appointment;
 import com.dh.dentalClinic.service.AppointmentService;
-import com.dh.dentalClinic.user.controllers.UsuarioController;
 import com.dh.dentalClinic.user.utils.JWTUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

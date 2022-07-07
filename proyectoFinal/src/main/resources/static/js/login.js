@@ -21,7 +21,7 @@ async function iniciarSesion() {
   if (respuesta != 'FAIL') {
     localStorage.token = respuesta;
     localStorage.email = datos.email;
-    window.location.href = 'dentists.html'
+    window.location.href = 'index.html'
   } else {
     alert("Las credenciales son incorrectas. Por favor intente nuevamente.");
   }

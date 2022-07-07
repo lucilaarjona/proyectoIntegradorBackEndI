@@ -2,23 +2,33 @@
 $(document).ready(function() {
   loadDentists();
   $('#dentists').DataTable();
+  actualizarEmailDelUsuario()
 });
+
+function actualizarEmailDelUsuario() {
+    document.getElementById('user-email').outerHTML = localStorage.email;
+}
+
+function getHeaders() {
+    return {
+     'Accept': 'application/json',
+     'Content-Type': 'application/json',
+     'Authorization': localStorage.token
+   };
+}
 
 async function loadDentists() {
 
     const request = await fetch('/dentists', {
       method: 'GET',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      }
+      headers: getHeaders()
     });
     const dentists = await request.json();
     let htmlList = '';
 
     for(let dentist of dentists) {
-      let deleteButton = `<a href="#" onClick="deleteDentist(${dentist.id})" class="btn btn-danger btn-circle btn-sm"><i class="fas fa-trash"></i></a>`;
-      let editButton = `<a href="#" type="button" onClick="loadDataToUpdate('${dentist.id}', '${dentist.firstName}', '${dentist.lastName}', '${dentist.registration}')" class="btn btn-info btn-circle btn-sm"><i class="fas fa-info-circle"></i></a>`;
+      let deleteButton = `<a href="#" onClick="deleteDentist(${dentist.id})" class="btn btn-danger btn-circle btn-sm">🗑️</a>`;
+      let editButton = `<a href="#" type="button" onClick="loadDataToUpdate('${dentist.id}', '${dentist.firstName}', '${dentist.lastName}', '${dentist.registration}')" class="btn btn-info btn-circle btn-sm">🖊️</a>`;
       let dentistHtml = `<tr> 
       <td>${dentist.id}</td>
       <td>${dentist.firstName}</td>
@@ -39,10 +49,7 @@ return;
 }
 const request = await fetch('/dentists/' + id, {
       method: 'DELETE',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      }
+      headers: getHeaders()
     });
 
 location.reload();
@@ -62,9 +69,7 @@ function createDentist(formData){
   const url = '/dentists';
                 const settings = {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
+                    headers: getHeaders(),
                     body: JSON.stringify(formData)
                 }
 
@@ -82,14 +87,6 @@ function createDentist(formData){
 
   let form = document.querySelector('#add_new_dentist');
 
-/*  form.addEventListener('submit', function (event){
-  event.preventDefault()
-    onClickCreateDentist()
-    $('#myModal').modal('hide');
-    resetUploadForm();
-    location.reload()
-
-})*/
 
 function submitAdd(){
     onClickCreateDentist()
@@ -134,9 +131,7 @@ function editDentist() {
         const url = '/dentists';
                 const settings = {
                     method: 'PUT',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
+                    headers: getHeaders(),
                     body: JSON.stringify(dataToUpdate)
                 }
 
