@@ -20,7 +20,7 @@ public class DentistController {
     @PostMapping
     public ResponseEntity<String> create(@RequestHeader(value = "Authorization") String token ,@RequestBody Dentist d) throws BadRequestException {
         ResponseEntity<String> response = null;
-        if (!validarToken(token)) { return null; }
+        if (!validateToken(token)) { return null; }
 
         if(service.save(d) != null) {
             response = ResponseEntity.ok("Dentist created.");
@@ -32,31 +32,31 @@ public class DentistController {
 
     @GetMapping()
     public List<Dentist> getAll(@RequestHeader(value = "Authorization") String token) throws BadRequestException {
-        if (!validarToken(token)) { return null; }
+        if (!validateToken(token)) { return null; }
         return service.getAll();
     }
 
     @GetMapping("/{id}")
     public Dentist getById(@RequestHeader(value = "Authorization") String token, @PathVariable Long id) throws BadRequestException {
-        if (!validarToken(token)) { return null; }
+        if (!validateToken(token)) { return null; }
         return service.getById(id);
     }
     
     @DeleteMapping(value = "{id}")
     public String delete(@RequestHeader(value = "Authorization") String token, @PathVariable Long id) throws BadRequestException {
-         if (!validarToken(token)) { return null; }
+         if (!validateToken(token)) { return null; }
          return service.delete(id);
     }
 
     @PutMapping
     public String update(@RequestHeader(value = "Authorization") String token, @RequestBody Dentist d) throws BadRequestException {
-        if (!validarToken(token)) { return null; }
+        if (!validateToken(token)) { return null; }
         return service.updateDentist(d);
     }
 
 
-    private boolean validarToken(String token) {
-        String usuarioId = jwtUtil.getKey(token);
-        return usuarioId != null;
+    private boolean validateToken(String token) {
+        String userId = jwtUtil.getKey(token);
+        return userId != null;
     }
 }
