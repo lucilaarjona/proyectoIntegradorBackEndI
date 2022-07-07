@@ -1,6 +1,6 @@
 package com.dh.dentalClinic.user.controllers;
-import com.dh.dentalClinic.user.dao.UsuarioDao;
-import com.dh.dentalClinic.user.models.Usuario;
+import com.dh.dentalClinic.user.dao.UserDao;
+import com.dh.dentalClinic.user.models.User;
 import com.dh.dentalClinic.user.utils.JWTUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,17 +12,17 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthController {
 
     @Autowired
-    private UsuarioDao usuarioDao;
+    private UserDao userDao;
 
     @Autowired
     private JWTUtil jwtUtil;
 
     @RequestMapping(value = "api/login", method = RequestMethod.POST)
-    public String login(@RequestBody Usuario usuario) {
+    public String login(@RequestBody User user) {
 
-        Usuario usuarioLogueado = usuarioDao.obtenerUsuarioPorCredenciales(usuario);
-        if (usuarioLogueado != null) {
-            String tokenJwt = jwtUtil.create(String.valueOf(usuarioLogueado.getId()), usuarioLogueado.getEmail());
+        User loggedUser = userDao.obtainByCredentials(user);
+        if (loggedUser != null) {
+            String tokenJwt = jwtUtil.create(String.valueOf(loggedUser.getId()), loggedUser.getEmail());
             return tokenJwt;
         }
         return "FAIL";
