@@ -19,36 +19,31 @@ public class AddressController {
 
     @PostMapping
     public Address create(@RequestHeader(value = "Authorization") String token, @RequestBody Address a) throws BadRequestException {
-        if (!validateToken(token)) { return null; }
+        if (!jwtUtil.validateToken(token)) { return null; }
         return service.save(a);
     }
 
     @GetMapping
     public List<Address> getAll(@RequestHeader(value = "Authorization") String token) throws BadRequestException{
-        if (!validateToken(token)) { return null; }
+        if (!jwtUtil.validateToken(token)) { return null; }
         return service.getAll();
     }
 
     @GetMapping("/{id}")
     public Address getById(@RequestHeader(value = "Authorization") String token, @PathVariable Long id) throws BadRequestException{
-        if (!validateToken(token)) { return null; }
+        if (!jwtUtil.validateToken(token)) { return null; }
         return service.getById(id);
     }
 
     @DeleteMapping(value = "{id}")
     public String delete(@RequestHeader(value = "Authorization") String token, @PathVariable Long id) throws BadRequestException{
-        if (!validateToken(token)) { return null; }
+        if (!jwtUtil.validateToken(token)) { return null; }
         return service.delete(id);
     }
 
     @PutMapping
     public String update(@RequestHeader(value = "Authorization") String token, @RequestBody Address a) throws BadRequestException{
-        if (!validateToken(token)) { return null; }
+        if (!jwtUtil.validateToken(token)) { return null; }
         return service.updateAppointment(a);
-    }
-
-    private boolean validateToken(String token) {
-        String userId = jwtUtil.getKey(token);
-        return userId != null;
     }
 }

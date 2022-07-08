@@ -1038,4 +1038,8 @@
   2022-07-07 16:37:26 INFO  AppointmentService:24 - Searching all appointments...
   2022-07-07 16:37:26 INFO  AppointmentService:29 - Search completed.
   2022-07-07 16:37:33 INFO  AppointmentService:37 - Looking for appointments with id: 1
+  2022-07-07 22:30:51 INFO  DentistService:21 - Dentist was successfully saved
+  2022-07-07 22:33:13 INFO  DentistService:21 - Dentist was successfully saved
+  2022-07-07 22:33:15 INFO  DentistService:30 - Searching all dentists...
+  2022-07-07 22:33:16 INFO  DentistService:35 - Search completed.
   

@@ -71,4 +71,9 @@ public class JWTUtil {
 
         return claims.getId();
     }
+
+    public boolean validateToken(String token) {
+        String userId = getKey(token);
+        return userId != null;
+    }
 }
