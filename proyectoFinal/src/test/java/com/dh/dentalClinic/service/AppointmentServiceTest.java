@@ -48,5 +48,4 @@ class AppointmentServiceTest {
         appointmentService.delete(appointmentService.getById(1L).getId());
         assertEquals(BadRequestException.class, BadRequestException.class);
     }
-
 }
