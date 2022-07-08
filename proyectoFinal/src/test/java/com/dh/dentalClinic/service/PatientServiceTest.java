@@ -1,6 +1,7 @@
 package com.dh.dentalClinic.service;
 import com.dh.dentalClinic.exceptions.BadRequestException;
-import com.dh.dentalClinic.persistence.entities.Patient;
+import com.dh.dentalClinic.dentalClinicAPI.persistence.entities.Patient;
+import com.dh.dentalClinic.dentalClinicAPI.service.PatientService;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
