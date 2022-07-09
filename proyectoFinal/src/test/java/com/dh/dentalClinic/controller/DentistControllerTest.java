@@ -1,8 +1,8 @@
 package com.dh.dentalClinic.controller;
 
+import com.dh.dentalClinic.dentalClinicAPI.controller.DentistController;
+import com.dh.dentalClinic.dentalClinicAPI.persistence.entities.Dentist;
 import com.dh.dentalClinic.exceptions.BadRequestException;
-import com.dh.dentalClinic.persistence.entities.Dentist;
-import com.dh.dentalClinic.persistence.entities.Patient;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;

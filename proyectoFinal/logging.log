@@ -870,4 +870,14 @@
   2022-07-07 22:11:32 INFO  AddressService:39 - Looking for address with id: 1
   2022-07-07 22:11:32 INFO  AddressService:39 - Looking for address with id: 1
   2022-07-07 22:11:32 INFO  AddressService:49 - Address was successfully deleted
+  2022-07-08 21:27:08 INFO  AddressService:20 - Address was successfully saved
+  2022-07-08 21:27:09 INFO  AddressService:39 - Looking for address with id: 1
+  2022-07-08 21:27:09 INFO  AddressService:25 - Searching all addresses...
+  2022-07-08 21:27:09 INFO  AddressService:30 - Search completed.
+  2022-07-08 21:27:09 INFO  AddressService:39 - Looking for address with id: 1
+  2022-07-08 21:27:09 INFO  AddressService:68 - Address with id: 1 was modified.
+  2022-07-08 21:27:09 INFO  AddressService:39 - Looking for address with id: 1
+  2022-07-08 21:27:09 INFO  AddressService:39 - Looking for address with id: 1
+  2022-07-08 21:27:09 INFO  AddressService:39 - Looking for address with id: 1
+  2022-07-08 21:27:09 INFO  AddressService:49 - Address was successfully deleted
   
