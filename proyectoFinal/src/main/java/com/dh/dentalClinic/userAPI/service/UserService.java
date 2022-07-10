@@ -25,7 +25,7 @@ public class UserService extends GlobalExceptions {
     public String delete(Long id) throws BadRequestException{
         if(repository.findById(id).isPresent()){
             repository.deleteById(id);
-            return "Address with id: "+ id + " was deleted. ";
+            return "User with id: "+ id + " was deleted. ";
         }
         throw new BadRequestException("User with id: " + id + " was not found.");
     }
@@ -36,7 +36,7 @@ public class UserService extends GlobalExceptions {
 
     public User obtainByCredentials(User user) {
         User userObtained = repository.getByemail(user.getEmail());
-        System.out.println("the user is: " + repository.getByemail(user.getEmail()));
+        System.out.println("The user is: " + repository.getByemail(user.getEmail()));
 
         if (userObtained == null) {
             System.out.println("is null.");
