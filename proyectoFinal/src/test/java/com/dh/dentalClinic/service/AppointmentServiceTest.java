@@ -1,6 +1,7 @@
 package com.dh.dentalClinic.service;
 import com.dh.dentalClinic.exceptions.BadRequestException;
-import com.dh.dentalClinic.persistence.entities.Appointment;
+import com.dh.dentalClinic.dentalClinicAPI.persistence.entities.Appointment;
+import com.dh.dentalClinic.dentalClinicAPI.service.AppointmentService;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -48,5 +49,4 @@ class AppointmentServiceTest {
         appointmentService.delete(appointmentService.getById(1L).getId());
         assertEquals(BadRequestException.class, BadRequestException.class);
     }
-
 }

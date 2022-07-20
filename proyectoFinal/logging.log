@@ -820,10 +820,73 @@
   2022-07-06 14:46:18 INFO  DentistService:21 - Dentist was succesfully saved
   2022-07-06 14:46:21 INFO  DentistService:30 - Searching all dentists...
   2022-07-06 14:47:21 INFO  DentistService:41 - Looking for dentist with id:2
+<<<<<<< HEAD
   2022-07-07 14:56:12 INFO  DentistService:30 - Searching all dentists...
   2022-07-07 14:56:12 ERROR DentistService:32 - com.dh.dentalClinic.exceptions.BadRequestException: Looking for a non existent list of dentists.
   2022-07-07 14:56:27 INFO  DentistService:30 - Searching all dentists...
   2022-07-07 14:56:27 ERROR DentistService:32 - com.dh.dentalClinic.exceptions.BadRequestException: Looking for a non existent list of dentists.
   2022-07-07 14:57:00 INFO  DentistService:30 - Searching all dentists...
   2022-07-07 14:57:00 ERROR DentistService:32 - com.dh.dentalClinic.exceptions.BadRequestException: Looking for a non existent list of dentists.
+=======
+  2022-07-07 21:54:15 INFO  PatientService:21 - Patient was successfully saved
+  2022-07-07 21:54:16 INFO  PatientService:42 - Looking for patient with id: 1
+  2022-07-07 21:54:42 INFO  PatientService:21 - Patient was successfully saved
+  2022-07-07 21:54:42 INFO  PatientService:42 - Looking for patient with id: 1
+  2022-07-07 21:54:42 INFO  PatientService:30 - Searching all patients...
+  2022-07-07 21:54:42 INFO  PatientService:35 - Search completed.
+  2022-07-07 21:54:42 INFO  PatientService:42 - Looking for patient with id: 1
+  2022-07-07 21:54:42 INFO  PatientService:74 - Patient with id: 1 was successfully modified.
+  2022-07-07 21:54:42 INFO  PatientService:42 - Looking for patient with id: 1
+  2022-07-07 21:54:42 INFO  PatientService:42 - Looking for patient with id: 1
+  2022-07-07 21:54:42 INFO  PatientService:53 - Patient with id: 1 was deleted.
+  2022-07-07 21:59:43 INFO  DentistService:21 - Dentist was successfully saved
+  2022-07-07 21:59:43 INFO  DentistService:43 - Looking for dentist with id: 1
+  2022-07-07 21:59:43 INFO  DentistService:30 - Searching all dentists...
+  2022-07-07 21:59:43 INFO  DentistService:35 - Search completed.
+  2022-07-07 21:59:43 INFO  DentistService:43 - Looking for dentist with id: 1
+  2022-07-07 21:59:43 INFO  DentistService:73 - Dentist with id: 1 was successfully modified.
+  2022-07-07 21:59:43 INFO  DentistService:43 - Looking for dentist with id: 1
+  2022-07-07 21:59:43 INFO  DentistService:43 - Looking for dentist with id: 1
+  2022-07-07 21:59:43 INFO  DentistService:54 - Dentist with id: 1 was deleted.
+  2022-07-07 22:04:40 INFO  AppointmentService:19 - Appointment was successfully saved
+  2022-07-07 22:04:41 INFO  AppointmentService:37 - Looking for appointments with id: 1
+  2022-07-07 22:04:41 INFO  AppointmentService:24 - Searching all appointments...
+  2022-07-07 22:04:41 INFO  AppointmentService:29 - Search completed.
+  2022-07-07 22:04:41 INFO  AppointmentService:37 - Looking for appointments with id: 1
+  2022-07-07 22:04:41 INFO  AppointmentService:65 - Appointment with id: 1 was successfully modified.
+  2022-07-07 22:04:41 INFO  AppointmentService:37 - Looking for appointments with id: 1
+  2022-07-07 22:04:41 INFO  AppointmentService:37 - Looking for appointments with id: 1
+  2022-07-07 22:04:41 INFO  AppointmentService:37 - Looking for appointments with id: 1
+  2022-07-07 22:04:41 INFO  AppointmentService:47 - Appointment was successfully deleted
+  2022-07-07 22:09:56 INFO  AddressService:20 - Address was successfully saved
+  2022-07-07 22:09:56 INFO  AddressService:39 - Looking for address with id: 1
+  2022-07-07 22:09:56 INFO  AddressService:25 - Searching all addresses...
+  2022-07-07 22:09:56 INFO  AddressService:30 - Search completed.
+  2022-07-07 22:09:56 INFO  AddressService:39 - Looking for address with id: 1
+  2022-07-07 22:09:56 INFO  AddressService:68 - Address with id: 1 was modified.
+  2022-07-07 22:09:56 INFO  AddressService:39 - Looking for address with id: 1
+  2022-07-07 22:09:56 INFO  AddressService:39 - Looking for address with id: 1
+  2022-07-07 22:09:56 INFO  AddressService:39 - Looking for address with id: 1
+  2022-07-07 22:09:56 INFO  AddressService:49 - Address was successfully deleted
+  2022-07-07 22:11:31 INFO  AddressService:20 - Address was successfully saved
+  2022-07-07 22:11:32 INFO  AddressService:39 - Looking for address with id: 1
+  2022-07-07 22:11:32 INFO  AddressService:25 - Searching all addresses...
+  2022-07-07 22:11:32 INFO  AddressService:30 - Search completed.
+  2022-07-07 22:11:32 INFO  AddressService:39 - Looking for address with id: 1
+  2022-07-07 22:11:32 INFO  AddressService:68 - Address with id: 1 was modified.
+  2022-07-07 22:11:32 INFO  AddressService:39 - Looking for address with id: 1
+  2022-07-07 22:11:32 INFO  AddressService:39 - Looking for address with id: 1
+  2022-07-07 22:11:32 INFO  AddressService:39 - Looking for address with id: 1
+  2022-07-07 22:11:32 INFO  AddressService:49 - Address was successfully deleted
+  2022-07-08 21:27:08 INFO  AddressService:20 - Address was successfully saved
+  2022-07-08 21:27:09 INFO  AddressService:39 - Looking for address with id: 1
+  2022-07-08 21:27:09 INFO  AddressService:25 - Searching all addresses...
+  2022-07-08 21:27:09 INFO  AddressService:30 - Search completed.
+  2022-07-08 21:27:09 INFO  AddressService:39 - Looking for address with id: 1
+  2022-07-08 21:27:09 INFO  AddressService:68 - Address with id: 1 was modified.
+  2022-07-08 21:27:09 INFO  AddressService:39 - Looking for address with id: 1
+  2022-07-08 21:27:09 INFO  AddressService:39 - Looking for address with id: 1
+  2022-07-08 21:27:09 INFO  AddressService:39 - Looking for address with id: 1
+  2022-07-08 21:27:09 INFO  AddressService:49 - Address was successfully deleted
+>>>>>>> fbc7b11f3b185f95e96db31f2f933d6d20e4ffae
   
